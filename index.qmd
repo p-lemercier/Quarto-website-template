@@ -1,21 +1,27 @@
 ---
-title: "Quarto_template"
+title: "Quarto template"
 ---
 
 This is a Quarto template for multi-language website.
 
 # R example: Quick summary and plot
 
+::: panel-tabset
+## Summary
+
 ```{r}
 library(ggplot2)
 summary(cars)
 ```
+
+## Plot
 
 ```{r}
 ggplot(cars, aes(speed, dist)) +
   geom_point() +
   geom_smooth(method = "loess", formula = "y ~ x")
 ```
+:::
 
 # Python example: Polar Axis
 
@@ -39,3 +45,48 @@ ax.grid(True)
 plt.show()
 ```
 
+# Observable JS example: Palmer Penguins
+
+```{ojs}
+data = FileAttachment("data/palmer-penguins.csv").csv({ typed: true })
+```
+
+```{ojs}
+viewof bill_length_min = Inputs.range(
+  [32, 50], 
+  {value: 35, step: 1, label: "Bill length (min):"}
+)
+viewof islands = Inputs.checkbox(
+  ["Torgersen", "Biscoe", "Dream"], 
+  { value: ["Torgersen", "Biscoe"], 
+    label: "Islands:"
+  }
+)
+```
+
+```{ojs}
+filtered = data.filter(function(penguin) {
+  return bill_length_min < penguin.bill_length_mm &&
+         islands.includes(penguin.island);
+})
+```
+
+```{ojs}
+Plot.rectY(filtered, 
+  Plot.binX(
+    {y: "count"}, 
+    {x: "body_mass_g", fill: "species", thresholds: 20}
+  ))
+  .plot({
+    facet: {
+      data: filtered,
+      x: "sex",
+      y: "species",
+      marginRight: 80
+    },
+    marks: [
+      Plot.frame(),
+    ]
+  }
+)
+```
