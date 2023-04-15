@@ -7,7 +7,7 @@ bibliography: references.bib
 
 ## Links
 
-You can create a link to an external website using absolute path. Find a detailed markdown syntax at [Mardown Guide](www.markdownguide.org/basic-syntax).
+You can create a link to an external website using absolute path. Find a detailed markdown syntax at [Mardown Guide](https://www.markdownguide.org/basic-syntax).
 
 You can add a link to another pages in your site with a relative path: see [about](about.qmd).
 
@@ -66,6 +66,7 @@ Quarto has native support for embedding Mermaid and Graphviz diagrams.
 **Mermaid**
 
 A simple diagram
+
 ```{mermaid}
 graph TB
 D --> E
@@ -73,6 +74,7 @@ E --> F
 ```
 
 Another diagram
+
 ```{mermaid}
 graph TD;
 	A-->B;
@@ -82,6 +84,7 @@ graph TD;
 ```
 
 A diagram with style
+
 ```{mermaid}
 graph TD;
 	A1 -.->id((B1));
