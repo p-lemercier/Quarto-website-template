@@ -3,11 +3,12 @@ project:
   output-dir: docs
 
 website:
-  title: "Quarto_template"
+  title: "Quarto Template"
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - editing.qmd
       - about.qmd
 
 format:

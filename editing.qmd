@@ -1,0 +1,97 @@
+---
+title: "Editing"
+bibliography: references.bib
+---
+
+# Text editor
+
+## Links
+
+You can create a link to an external website using absolute path. Find a detailed markdown syntax at [Mardown Guide](www.markdownguide.org/basic-syntax).
+
+You can add a link to another pages in your site with a relative path: see [about](about.qmd).
+
+## Image
+
+See @fig-r-logo the R logo.
+
+![R is a programming language for statistical computing](./images/619px-R_logo.svg.png){#fig-r-logo fig-alt="R logo" fig-align="center" width="200"}
+
+## Equations
+
+LaTeX equations are authored using standard Pandoc markdown syntax.
+
+**Inline Math**
+
+This is a fraction $\frac{1}{2} = 0.5$.
+
+**Display**
+
+$$
+\sum_{i=0}^n u_{ij}
+$$
+
+## Footnote
+
+You can include footnotes[^1].
+
+[^1]: This is a footnote.
+
+## Citation
+
+The references are listed at the bottom of the page [@abdi2013].
+
+## Callout-note
+
+::: callout-note
+Note
+:::
+
+::: callout-tip
+Tip
+:::
+
+::: callout-important
+Important
+:::
+
+::: callout-caution
+Caution
+:::
+
+## Diagrams
+
+Quarto has native support for embedding Mermaid and Graphviz diagrams.
+
+**Mermaid**
+
+A simple diagram
+```{mermaid}
+graph TB
+D --> E
+E --> F
+```
+
+Another diagram
+```{mermaid}
+graph TD;
+	A-->B;
+	A-->C;
+	B-->D;
+	C-->D;
+```
+
+A diagram with style
+```{mermaid}
+graph TD;
+	A1 -.->id((B1));
+	A1 --> A1;
+	A2-- text -->B2;
+	%%A3 --xB3;
+	B4<-->C4;
+	%%A5-- text --oB5;
+	A & B==> C & D;
+	
+	 classDef className fill:#f9f,stroke:#333,stroke-width:4px;
+	 class A1,A2,A className;
+```

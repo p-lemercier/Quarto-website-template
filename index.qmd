@@ -48,7 +48,7 @@ plt.show()
 # Observable JS example: Palmer Penguins
 
 ```{ojs}
-data = FileAttachment("data/palmer-penguins.csv").csv({ typed: true })
+data = FileAttachment("./data/palmer-penguins.csv").csv({ typed: true })
 ```
 
 ```{ojs}
