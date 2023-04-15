@@ -4,7 +4,15 @@ project:
 
 website:
   title: "Quarto Template"
+  reader-mode: true
   navbar:
+    tools:
+      - icon: github
+        menu:
+          - text: Source Code
+            url:  https://code.com
+          - text: Report a Bug
+            url:  https://bugs.com
     left:
       - href: index.qmd
         text: Home
@@ -13,7 +21,9 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: flatly
+      dark: darkly
     css: styles.css
     code-fold: true
     toc: true
