@@ -4,15 +4,15 @@ project:
 
 website:
   title: "Quarto Template"
-  reader-mode: true
+  reader-mode: false
   navbar:
     tools:
       - icon: github
         menu:
           - text: Source Code
-            url:  https://code.com
+            url:  https://github.com/p-lemercier/Quarto-website-template
           - text: Report a Bug
-            url:  https://bugs.com
+            url:  https://github.com/p-lemercier/Quarto-website-template/issues
     left:
       - href: index.qmd
         text: Home
@@ -24,9 +24,16 @@ format:
     theme:
       light: flatly
       dark: darkly
-    css: styles.css
+    df-print: paged
     code-fold: true
+    code-copy: true
+    code-link: true
+    code-tools:
+      source: false 
+      toggle: true
+    code-block-bg: true
     toc: true
+    css: styles.css
 
 editor: visual
-
+lang: en

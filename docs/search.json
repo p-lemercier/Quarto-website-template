@@ -1,37 +1,79 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This is a Quarto website.\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto websites visit https://quarto.org/docs/websites."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Quarto template",
     "section": "",
-    "text": "This is a Quarto template for multi-language website.\n\nR example: Quick summary and plot\n\nSummaryPlot\n\n\n\n\nCode\nlibrary(ggplot2)\nsummary(cars)\n\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00  \n\n\n\n\n\n\nCode\nggplot(cars, aes(speed, dist)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", formula = \"y ~ x\")\n\n\n\n\n\n\n\n\n\n\nPython example: Polar Axis\nFor a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\nFigure 1: A line plot on a polar axis\n\n\n\n\n\n\nObservable JS example: Palmer Penguins\n\n\nCode\ndata = FileAttachment(\"./data/palmer-penguins.csv\").csv({ typed: true })\n\n\n\n\n\n\n\n\n\nCode\nviewof bill_length_min = Inputs.range(\n  [32, 50], \n  {value: 35, step: 1, label: \"Bill length (min):\"}\n)\nviewof islands = Inputs.checkbox(\n  [\"Torgersen\", \"Biscoe\", \"Dream\"], \n  { value: [\"Torgersen\", \"Biscoe\"], \n    label: \"Islands:\"\n  }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nfiltered = data.filter(function(penguin) {\n  return bill_length_min < penguin.bill_length_mm &&\n         islands.includes(penguin.island);\n})\n\n\n\n\n\n\n\n\n\nCode\nPlot.rectY(filtered, \n  Plot.binX(\n    {y: \"count\"}, \n    {x: \"body_mass_g\", fill: \"species\", thresholds: 20}\n  ))\n  .plot({\n    facet: {\n      data: filtered,\n      x: \"sex\",\n      y: \"species\",\n      marginRight: 80\n    },\n    marks: [\n      Plot.frame(),\n    ]\n  }\n)"
-  },
-  {
-    "objectID": "Exemple.html",
-    "href": "Exemple.html",
-    "title": "Exemple",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\n\n\nAbsolute path : Find a detailed markdown syntax at Mardown Guide.\nRelative path\n\n\n\n(Abdi, Williams, and Valentin 2013)\n\n\n\nEquation with LaTeX Math\nInline\n\\(\\frac{1}{2} = 0.5\\)\nDisplay\n\\[\n\\sum_{i=0}^n u_{ij}\n\\]\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nNote\n\n\n\n\n\n\n\n\nTip\n\n\n\nTip\n\n\n\n\n\n\n\n\nImportant\n\n\n\nImportant\n\n\n\n\n\n\n\n\nDanger\n\n\n\nCaution\n\n\n\n\n\nGraph\n\n\n\n\ngraph TD;\n    A-->B;\n    A-->C;\n    B-->D;\n    C-->D;\n\n\n\n\n\n\n\n\n\n\n\n\ngraph TD;\n    A1 -.->id((B1));\n    A1 --> A1;\n    A2-- text -->B2;\n    %%A3 --xB3;\n    B4<-->C4;\n    %%A5-- text --oB5;\n    A & B==> C & D;\n    \n     classDef className fill:#f9f,stroke:#333,stroke-width:4px;\n     class A1,A2,A className;\n\n\n\n\n\n\n\n\n\n\n\n\ngraph TB;\n    subgraph motorices;\n    C1[Cortex moteur <br> et prémoteur]-->N1[Putamen]-->G1[\"GPi (vl) <br> SNr\"]-->T1[\"Thalamus (vl, m)\"];\n    C2[Cortex <br> oculomoteur]-->N2[Noyau <br> Caudé central]-->G2[\"GPi (cdm) <br> SNr\"]-->T2[\"Thalamus (va, dm)\"];\n    end;\n    subgraph associatives;\n    C3[Cortex moteur <br> et prémoteur]-->N3[Putamen]-->G3[\"GPi (vl) <br> SNr\"]-->T3[\"Thalamus (vl, m)\"];\n    C4[Cortex <br> oculomoteur]-->N4[Noyau <br> Caudé central]-->G4[\"GPi (cdm) <br> SNr\"]-->T4[\"Thalamus (va, dm)\"];\n    end;\n    T4--> C4\n\n\n\n\n\n\n\n\n\n\n\n\ngraph TB\nD --> E\nE --> F"
-  },
-  {
-    "objectID": "exemple.html",
-    "href": "exemple.html",
-    "title": "Exemple",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\n\n\nAbsolute path : Find a detailed markdown syntax at Mardown Guide.\nRelative path\n\n\n\n(Abdi, Williams, and Valentin 2013)\n\n\n\nEquation with LaTeX Math\nInline\n\\(\\frac{1}{2} = 0.5\\)\nDisplay\n\\[\n\\sum_{i=0}^n u_{ij}\n\\]\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nNote\n\n\n\n\n\n\n\n\nTip\n\n\n\nTip\n\n\n\n\n\n\n\n\nImportant\n\n\n\nImportant\n\n\n\n\n\n\n\n\nDanger\n\n\n\nCaution\n\n\n\n\n\n\n\n\nGraph with Mermaid\n\n\n\n\ngraph TB\nD --> E\nE --> F\n\n\n\n\n\n\n\n\n\n\n\n\ngraph TD;\n    A-->B;\n    A-->C;\n    B-->D;\n    C-->D;\n\n\n\n\n\n\n\n\n\n\n\n\ngraph TD;\n    A1 -.->id((B1));\n    A1 --> A1;\n    A2-- text -->B2;\n    %%A3 --xB3;\n    B4<-->C4;\n    %%A5-- text --oB5;\n    A & B==> C & D;\n    \n     classDef className fill:#f9f,stroke:#333,stroke-width:4px;\n     class A1,A2,A className;\n\n\n\n\n\n\n\n\n\n\n\n\ngraph TB;\n    subgraph motorices;\n    C1[Cortex moteur <br> et prémoteur]-->N1[Putamen]-->G1[\"GPi (vl) <br> SNr\"]-->T1[\"Thalamus (vl, m)\"];\n    C2[Cortex <br> oculomoteur]-->N2[Noyau <br> Caudé central]-->G2[\"GPi (cdm) <br> SNr\"]-->T2[\"Thalamus (va, dm)\"];\n    end;\n    subgraph associatives;\n    C3[Cortex moteur <br> et prémoteur]-->N3[Putamen]-->G3[\"GPi (vl) <br> SNr\"]-->T3[\"Thalamus (vl, m)\"];\n    C4[Cortex <br> oculomoteur]-->N4[Noyau <br> Caudé central]-->G4[\"GPi (cdm) <br> SNr\"]-->T4[\"Thalamus (va, dm)\"];\n    end;\n    T4--> C4"
+    "text": "This is a Quarto template for multi-language website.\nR example: Quick summary and plot\n\n\nSummary\nPlot\n\n\n\n\nCodelibrary(ggplot2)\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00  \n\n\n\n\n\nCodeggplot(cars, aes(speed, dist)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", formula = \"y ~ x\")\n\n\n\n\n\n\n\nPython example: Polar Axis\nFor a demonstration of a line plot on a polar axis, see Figure 1.\n\nCodeimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\nFigure 1: A line plot on a polar axis\n\n\n\nObservable JS example: Palmer Penguins\n\nCodedata = FileAttachment(\"./data/palmer-penguins.csv\").csv({ typed: true })\n\n\n\n\n\n\n\nCodeviewof bill_length_min = Inputs.range(\n  [32, 50], \n  {value: 35, step: 1, label: \"Bill length (min):\"}\n)\nviewof islands = Inputs.checkbox(\n  [\"Torgersen\", \"Biscoe\", \"Dream\"], \n  { value: [\"Torgersen\", \"Biscoe\"], \n    label: \"Islands:\"\n  }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCodefiltered = data.filter(function(penguin) {\n  return bill_length_min &lt; penguin.bill_length_mm &&\n         islands.includes(penguin.island);\n})\n\n\n\n\n\n\n\nCodePlot.rectY(filtered, \n  Plot.binX(\n    {y: \"count\"}, \n    {x: \"body_mass_g\", fill: \"species\", thresholds: 20}\n  ))\n  .plot({\n    facet: {\n      data: filtered,\n      x: \"sex\",\n      y: \"species\",\n      marginRight: 80\n    },\n    marks: [\n      Plot.frame(),\n    ]\n  }\n)"
   },
   {
     "objectID": "editing.html",
     "href": "editing.html",
     "title": "Editing",
     "section": "",
-    "text": "You can create a link to an external website using absolute path. Find a detailed markdown syntax at Mardown Guide.\nYou can add a link to another pages in your site with a relative path: see about.\n\n\n\nSee Figure 1 the R logo.\n\n\n\nFigure 1: R is a programming language for statistical computing\n\n\n\n\n\nLaTeX equations are authored using standard Pandoc markdown syntax.\nInline Math\nThis is a fraction \\(\\frac{1}{2} = 0.5\\).\nDisplay\n\\[\n\\sum_{i=0}^n u_{ij}\n\\]\n\n\n\nYou can include footnotes1.\n\n\n\nThe references are listed at the bottom of the page (Abdi, Williams, and Valentin 2013).\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nNote\n\n\n\n\n\n\n\n\nTip\n\n\n\nTip\n\n\n\n\n\n\n\n\nImportant\n\n\n\nImportant\n\n\n\n\n\n\n\n\nDanger\n\n\n\nCaution\n\n\n\n\n\nQuarto has native support for embedding Mermaid and Graphviz diagrams.\nMermaid\nA simple diagram\n\n\n\n\ngraph TB\nD --> E\nE --> F\n\n\n\n\n\n\n\n\nAnother diagram\n\n\n\n\ngraph TD;\n    A-->B;\n    A-->C;\n    B-->D;\n    C-->D;\n\n\n\n\n\n\n\n\nA diagram with style\n\n\n\n\ngraph TD;\n    A1 -.->id((B1));\n    A1 --> A1;\n    A2-- text -->B2;\n    %%A3 --xB3;\n    B4<-->C4;\n    %%A5-- text --oB5;\n    A & B==> C & D;\n    \n     classDef className fill:#f9f,stroke:#333,stroke-width:4px;\n     class A1,A2,A className;"
+    "text": "You can create a link to an external website using absolute path. Find a detailed markdown syntax at Mardown Guide.\nYou can add a link to another pages in your site with a relative path: see about.\n\n\n\nSee Figure 1 the R logo.\n\n\n\nFigure 1: R is a programming language for statistical computing\n\n\n\n\n\nLaTeX equations are authored using standard Pandoc markdown syntax.\nInline Math\nThis is a fraction \\(\\frac{1}{2} = 0.5\\).\nDisplay\n\\[\n\\sum_{i=0}^n u_{ij}\n\\]\n\n\n\nYou can include footnotes1.\n\n\n\nThe references are listed at the bottom of the page (Abdi, Williams, and Valentin 2013).\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nNote\n\n\n\n\n\n\n\n\nTip\n\n\n\nTip\n\n\n\n\n\n\n\n\nImportant\n\n\n\nImportant\n\n\n\n\n\n\n\n\nCaution\n\n\n\nCaution\n\n\n\n\n\nQuarto has native support for embedding Mermaid and Graphviz diagrams.\nMermaid\nA simple diagram\n\n\n\n\ngraph TB\nD --&gt; E\nE --&gt; F\n\n\n\n\n\nAnother diagram\n\n\n\n\ngraph TD;\n    A--&gt;B;\n    A--&gt;C;\n    B--&gt;D;\n    C--&gt;D;\n\n\n\n\n\nA diagram with style\n\n\n\n\ngraph TD;\n    A1 -.-&gt;id((B1));\n    A1 --&gt; A1;\n    A2-- text --&gt;B2;\n    %%A3 --xB3;\n    B4&lt;--&gt;C4;\n    %%A5-- text --oB5;\n    A & B==&gt; C & D;\n    \n     classDef className fill:#f9f,stroke:#333,stroke-width:4px;\n     class A1,A2,A className;"
+  },
+  {
+    "objectID": "editing.html#links",
+    "href": "editing.html#links",
+    "title": "Editing",
+    "section": "",
+    "text": "You can create a link to an external website using absolute path. Find a detailed markdown syntax at Mardown Guide.\nYou can add a link to another pages in your site with a relative path: see about."
+  },
+  {
+    "objectID": "editing.html#image",
+    "href": "editing.html#image",
+    "title": "Editing",
+    "section": "",
+    "text": "See Figure 1 the R logo.\n\n\n\nFigure 1: R is a programming language for statistical computing"
+  },
+  {
+    "objectID": "editing.html#equations",
+    "href": "editing.html#equations",
+    "title": "Editing",
+    "section": "",
+    "text": "LaTeX equations are authored using standard Pandoc markdown syntax.\nInline Math\nThis is a fraction \\(\\frac{1}{2} = 0.5\\).\nDisplay\n\\[\n\\sum_{i=0}^n u_{ij}\n\\]"
+  },
+  {
+    "objectID": "editing.html#footnote",
+    "href": "editing.html#footnote",
+    "title": "Editing",
+    "section": "",
+    "text": "You can include footnotes1."
+  },
+  {
+    "objectID": "editing.html#citation",
+    "href": "editing.html#citation",
+    "title": "Editing",
+    "section": "",
+    "text": "The references are listed at the bottom of the page (Abdi, Williams, and Valentin 2013)."
+  },
+  {
+    "objectID": "editing.html#callout-note",
+    "href": "editing.html#callout-note",
+    "title": "Editing",
+    "section": "",
+    "text": "Note\n\n\n\nNote\n\n\n\n\n\n\n\n\nTip\n\n\n\nTip\n\n\n\n\n\n\n\n\nImportant\n\n\n\nImportant\n\n\n\n\n\n\n\n\nCaution\n\n\n\nCaution"
+  },
+  {
+    "objectID": "editing.html#diagrams",
+    "href": "editing.html#diagrams",
+    "title": "Editing",
+    "section": "",
+    "text": "Quarto has native support for embedding Mermaid and Graphviz diagrams.\nMermaid\nA simple diagram\n\n\n\n\ngraph TB\nD --&gt; E\nE --&gt; F\n\n\n\n\n\nAnother diagram\n\n\n\n\ngraph TD;\n    A--&gt;B;\n    A--&gt;C;\n    B--&gt;D;\n    C--&gt;D;\n\n\n\n\n\nA diagram with style\n\n\n\n\ngraph TD;\n    A1 -.-&gt;id((B1));\n    A1 --&gt; A1;\n    A2-- text --&gt;B2;\n    %%A3 --xB3;\n    B4&lt;--&gt;C4;\n    %%A5-- text --oB5;\n    A & B==&gt; C & D;\n    \n     classDef className fill:#f9f,stroke:#333,stroke-width:4px;\n     class A1,A2,A className;"
+  },
+  {
+    "objectID": "editing.html#footnotes",
+    "href": "editing.html#footnotes",
+    "title": "Editing",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is a footnote.↩︎"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This is a Quarto website.\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto websites visit https://quarto.org/docs/websites."
   }
 ]
