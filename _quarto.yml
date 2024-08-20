@@ -10,12 +10,15 @@ website:
       - icon: github
         menu:
           - text: Source Code
-            url:  https://github.com/p-lemercier/Quarto-website-template
+            url: https://github.com/p-lemercier/Quarto-website-template
           - text: Report a Bug
-            url:  https://github.com/p-lemercier/Quarto-website-template/issues
+            url: https://github.com/p-lemercier/Quarto-website-template/issues
     left:
-      - href: index.qmd
-        text: Home
+      - text: Home
+        href: index.qmd
+      - text: "Other languages"
+        menu:
+          - observable_js.qmd
       - editing.qmd
       - about.qmd
 
@@ -32,6 +35,7 @@ format:
       source: false 
       toggle: true
     code-block-bg: true
+    fig-cap-location: top
     toc: true
     css: styles.css
 

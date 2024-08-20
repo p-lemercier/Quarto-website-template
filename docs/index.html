@@ -89,8 +89,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script><link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+}</script><link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script><link rel="stylesheet" href="styles.css">
 </head>
 <body class="nav-fixed">
@@ -112,6 +111,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Home</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-other-languages" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Other languages</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-other-languages">
+<li>
+    <a class="dropdown-item" href="./observable_js.html" rel="" target="">
+ <span class="dropdown-text">Interactivity with Observable JS</span></a>
+  </li>  
+    </ul>
+</li>
   <li class="nav-item">
     <a class="nav-link" href="./editing.html" rel="" target="">
  <span class="menu-text">Editing</span></a>
@@ -148,9 +158,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#r-example-quick-summary-and-plot" id="toc-r-example-quick-summary-and-plot" class="nav-link active" data-scroll-target="#r-example-quick-summary-and-plot">R example: Quick summary and plot</a></li>
-  <li><a href="#python-example-polar-axis" id="toc-python-example-polar-axis" class="nav-link" data-scroll-target="#python-example-polar-axis">Python example: Polar Axis</a></li>
-  <li><a href="#observable-js-example-palmer-penguins" id="toc-observable-js-example-palmer-penguins" class="nav-link" data-scroll-target="#observable-js-example-palmer-penguins">Observable JS example: Palmer Penguins</a></li>
+<li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#the-pinguin-dataset" id="toc-the-pinguin-dataset" class="nav-link" data-scroll-target="#the-pinguin-dataset">The pinguin dataset</a></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -168,145 +178,426 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-</header><p>This is a Quarto template for multi-language website.</p>
-<section id="r-example-quick-summary-and-plot" class="level1"><h1>R example: Quick summary and plot</h1>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
+</header><p>This is a Quarto template for multi-language website. We present below example with R and Python.</p>
+<section id="setup" class="level1"><h1>Setup</h1>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist">
-<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Summary</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Plot</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">R</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Python</a></li>
 </ul>
-<div class="tab-content">
+<div class="tab-content" data-group="language">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
-<pre><code>     speed           dist       
- Min.   : 4.0   Min.   :  2.00  
- 1st Qu.:12.0   1st Qu.: 26.00  
- Median :15.0   Median : 36.00  
- Mean   :15.4   Mean   : 42.98  
- 3rd Qu.:19.0   3rd Qu.: 56.00  
- Max.   :25.0   Max.   :120.00  </code></pre>
-</div>
+<details open=""><summary>Load R packages</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">cars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">speed</span>, <span class="va">dist</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"loess"</span>, formula <span class="op">=</span> <span class="st">"y ~ x"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Load Python packages</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> session_info</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</section><section id="the-pinguin-dataset" class="level1"><h1>The pinguin dataset</h1>
+<p>The goal of palmerpenguins is to provide a great dataset for data exploration &amp; visualization.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">R</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Python</a></li>
+</ul>
+<div class="tab-content" data-group="language">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Description</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Structure</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Overview</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell" data-r.options="{&quot;knitr.kable.NA&quot;:&quot;&quot;}">
+<details><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"./docs/data/palmer-penguins.csv"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    species <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span>,</span>
+<span>    island <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">island</span><span class="op">)</span>,</span>
+<span>    sex <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">sex</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">dt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 13%">
+<col style="width: 10%">
+<col style="width: 8%">
+<col style="width: 10%">
+</colgroup>
+<thead><tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">rowid</th>
+<th style="text-align: left;">species</th>
+<th style="text-align: left;">island</th>
+<th style="text-align: left;">bill_length_mm</th>
+<th style="text-align: left;">bill_depth_mm</th>
+<th style="text-align: left;">flipper_length_mm</th>
+<th style="text-align: left;">body_mass_g</th>
+<th style="text-align: left;">sex</th>
+<th style="text-align: left;">year</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Min. : 1.00</td>
+<td style="text-align: left;">Adelie :152</td>
+<td style="text-align: left;">Biscoe :168</td>
+<td style="text-align: left;">Min. :32.10</td>
+<td style="text-align: left;">Min. :13.10</td>
+<td style="text-align: left;">Min. :172.0</td>
+<td style="text-align: left;">Min. :2700</td>
+<td style="text-align: left;">female:165</td>
+<td style="text-align: left;">Min. :2007</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1st Qu.: 86.75</td>
+<td style="text-align: left;">Chinstrap: 68</td>
+<td style="text-align: left;">Dream :124</td>
+<td style="text-align: left;">1st Qu.:39.23</td>
+<td style="text-align: left;">1st Qu.:15.60</td>
+<td style="text-align: left;">1st Qu.:190.0</td>
+<td style="text-align: left;">1st Qu.:3550</td>
+<td style="text-align: left;">male :168</td>
+<td style="text-align: left;">1st Qu.:2007</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Median :172.50</td>
+<td style="text-align: left;">Gentoo :124</td>
+<td style="text-align: left;">Torgersen: 52</td>
+<td style="text-align: left;">Median :44.45</td>
+<td style="text-align: left;">Median :17.30</td>
+<td style="text-align: left;">Median :197.0</td>
+<td style="text-align: left;">Median :4050</td>
+<td style="text-align: left;">NA’s : 11</td>
+<td style="text-align: left;">Median :2008</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Mean :172.50</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Mean :43.92</td>
+<td style="text-align: left;">Mean :17.15</td>
+<td style="text-align: left;">Mean :200.9</td>
+<td style="text-align: left;">Mean :4202</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Mean :2008</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3rd Qu.:258.25</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3rd Qu.:48.50</td>
+<td style="text-align: left;">3rd Qu.:18.70</td>
+<td style="text-align: left;">3rd Qu.:213.0</td>
+<td style="text-align: left;">3rd Qu.:4750</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3rd Qu.:2009</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Max. :344.00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Max. :59.60</td>
+<td style="text-align: left;">Max. :21.50</td>
+<td style="text-align: left;">Max. :231.0</td>
+<td style="text-align: left;">Max. :6300</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Max. :2009</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">NA’s :2</td>
+<td style="text-align: left;">NA’s :2</td>
+<td style="text-align: left;">NA’s :2</td>
+<td style="text-align: left;">NA’s :2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
-</div>
-</div>
-</section><section id="python-example-polar-axis" class="level1"><h1>Python example: Polar Axis</h1>
-<p>For a demonstration of a line plot on a polar axis, see <a href="#fig-polar">Figure&nbsp;1</a>.</p>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  subplot_kw <span class="op">=</span> {<span class="st">'projection'</span>: <span class="st">'polar'</span>} </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>ax.plot(theta, r)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   344 obs. of  9 variables:
+ $ rowid            : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ species          : Factor w/ 3 levels "Adelie","Chinstrap",..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ island           : Factor w/ 3 levels "Biscoe","Dream",..: 3 3 3 3 3 3 3 3 3 3 ...
+ $ bill_length_mm   : num  39.1 39.5 40.3 NA 36.7 39.3 38.9 39.2 34.1 42 ...
+ $ bill_depth_mm    : num  18.7 17.4 18 NA 19.3 20.6 17.8 19.6 18.1 20.2 ...
+ $ flipper_length_mm: int  181 186 195 NA 193 190 181 195 193 190 ...
+ $ body_mass_g      : int  3750 3800 3250 NA 3450 3650 3625 4675 3475 4250 ...
+ $ sex              : Factor w/ 2 levels "female","male": 2 1 1 NA 1 2 1 2 NA NA ...
+ $ year             : int  2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="cell">
+<details><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<div id="fig-polar" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="index_files/figure-html/fig-polar-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: A line plot on a polar axis</figcaption></figure>
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["rowid"],"name":[1],"type":["int"],"align":["right"]},{"label":["species"],"name":[2],"type":["fct"],"align":["left"]},{"label":["island"],"name":[3],"type":["fct"],"align":["left"]},{"label":["bill_length_mm"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["bill_depth_mm"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["flipper_length_mm"],"name":[6],"type":["int"],"align":["right"]},{"label":["body_mass_g"],"name":[7],"type":["int"],"align":["right"]},{"label":["sex"],"name":[8],"type":["fct"],"align":["left"]},{"label":["year"],"name":[9],"type":["int"],"align":["right"]}],"data":[{"1":"1","2":"Adelie","3":"Torgersen","4":"39.1","5":"18.7","6":"181","7":"3750","8":"male","9":"2007"},{"1":"2","2":"Adelie","3":"Torgersen","4":"39.5","5":"17.4","6":"186","7":"3800","8":"female","9":"2007"},{"1":"3","2":"Adelie","3":"Torgersen","4":"40.3","5":"18.0","6":"195","7":"3250","8":"female","9":"2007"},{"1":"4","2":"Adelie","3":"Torgersen","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"2007"},{"1":"5","2":"Adelie","3":"Torgersen","4":"36.7","5":"19.3","6":"193","7":"3450","8":"female","9":"2007"},{"1":"6","2":"Adelie","3":"Torgersen","4":"39.3","5":"20.6","6":"190","7":"3650","8":"male","9":"2007"},{"1":"7","2":"Adelie","3":"Torgersen","4":"38.9","5":"17.8","6":"181","7":"3625","8":"female","9":"2007"},{"1":"8","2":"Adelie","3":"Torgersen","4":"39.2","5":"19.6","6":"195","7":"4675","8":"male","9":"2007"},{"1":"9","2":"Adelie","3":"Torgersen","4":"34.1","5":"18.1","6":"193","7":"3475","8":"NA","9":"2007"},{"1":"10","2":"Adelie","3":"Torgersen","4":"42.0","5":"20.2","6":"190","7":"4250","8":"NA","9":"2007"},{"1":"11","2":"Adelie","3":"Torgersen","4":"37.8","5":"17.1","6":"186","7":"3300","8":"NA","9":"2007"},{"1":"12","2":"Adelie","3":"Torgersen","4":"37.8","5":"17.3","6":"180","7":"3700","8":"NA","9":"2007"},{"1":"13","2":"Adelie","3":"Torgersen","4":"41.1","5":"17.6","6":"182","7":"3200","8":"female","9":"2007"},{"1":"14","2":"Adelie","3":"Torgersen","4":"38.6","5":"21.2","6":"191","7":"3800","8":"male","9":"2007"},{"1":"15","2":"Adelie","3":"Torgersen","4":"34.6","5":"21.1","6":"198","7":"4400","8":"male","9":"2007"},{"1":"16","2":"Adelie","3":"Torgersen","4":"36.6","5":"17.8","6":"185","7":"3700","8":"female","9":"2007"},{"1":"17","2":"Adelie","3":"Torgersen","4":"38.7","5":"19.0","6":"195","7":"3450","8":"female","9":"2007"},{"1":"18","2":"Adelie","3":"Torgersen","4":"42.5","5":"20.7","6":"197","7":"4500","8":"male","9":"2007"},{"1":"19","2":"Adelie","3":"Torgersen","4":"34.4","5":"18.4","6":"184","7":"3325","8":"female","9":"2007"},{"1":"20","2":"Adelie","3":"Torgersen","4":"46.0","5":"21.5","6":"194","7":"4200","8":"male","9":"2007"},{"1":"21","2":"Adelie","3":"Biscoe","4":"37.8","5":"18.3","6":"174","7":"3400","8":"female","9":"2007"},{"1":"22","2":"Adelie","3":"Biscoe","4":"37.7","5":"18.7","6":"180","7":"3600","8":"male","9":"2007"},{"1":"23","2":"Adelie","3":"Biscoe","4":"35.9","5":"19.2","6":"189","7":"3800","8":"female","9":"2007"},{"1":"24","2":"Adelie","3":"Biscoe","4":"38.2","5":"18.1","6":"185","7":"3950","8":"male","9":"2007"},{"1":"25","2":"Adelie","3":"Biscoe","4":"38.8","5":"17.2","6":"180","7":"3800","8":"male","9":"2007"},{"1":"26","2":"Adelie","3":"Biscoe","4":"35.3","5":"18.9","6":"187","7":"3800","8":"female","9":"2007"},{"1":"27","2":"Adelie","3":"Biscoe","4":"40.6","5":"18.6","6":"183","7":"3550","8":"male","9":"2007"},{"1":"28","2":"Adelie","3":"Biscoe","4":"40.5","5":"17.9","6":"187","7":"3200","8":"female","9":"2007"},{"1":"29","2":"Adelie","3":"Biscoe","4":"37.9","5":"18.6","6":"172","7":"3150","8":"female","9":"2007"},{"1":"30","2":"Adelie","3":"Biscoe","4":"40.5","5":"18.9","6":"180","7":"3950","8":"male","9":"2007"},{"1":"31","2":"Adelie","3":"Dream","4":"39.5","5":"16.7","6":"178","7":"3250","8":"female","9":"2007"},{"1":"32","2":"Adelie","3":"Dream","4":"37.2","5":"18.1","6":"178","7":"3900","8":"male","9":"2007"},{"1":"33","2":"Adelie","3":"Dream","4":"39.5","5":"17.8","6":"188","7":"3300","8":"female","9":"2007"},{"1":"34","2":"Adelie","3":"Dream","4":"40.9","5":"18.9","6":"184","7":"3900","8":"male","9":"2007"},{"1":"35","2":"Adelie","3":"Dream","4":"36.4","5":"17.0","6":"195","7":"3325","8":"female","9":"2007"},{"1":"36","2":"Adelie","3":"Dream","4":"39.2","5":"21.1","6":"196","7":"4150","8":"male","9":"2007"},{"1":"37","2":"Adelie","3":"Dream","4":"38.8","5":"20.0","6":"190","7":"3950","8":"male","9":"2007"},{"1":"38","2":"Adelie","3":"Dream","4":"42.2","5":"18.5","6":"180","7":"3550","8":"female","9":"2007"},{"1":"39","2":"Adelie","3":"Dream","4":"37.6","5":"19.3","6":"181","7":"3300","8":"female","9":"2007"},{"1":"40","2":"Adelie","3":"Dream","4":"39.8","5":"19.1","6":"184","7":"4650","8":"male","9":"2007"},{"1":"41","2":"Adelie","3":"Dream","4":"36.5","5":"18.0","6":"182","7":"3150","8":"female","9":"2007"},{"1":"42","2":"Adelie","3":"Dream","4":"40.8","5":"18.4","6":"195","7":"3900","8":"male","9":"2007"},{"1":"43","2":"Adelie","3":"Dream","4":"36.0","5":"18.5","6":"186","7":"3100","8":"female","9":"2007"},{"1":"44","2":"Adelie","3":"Dream","4":"44.1","5":"19.7","6":"196","7":"4400","8":"male","9":"2007"},{"1":"45","2":"Adelie","3":"Dream","4":"37.0","5":"16.9","6":"185","7":"3000","8":"female","9":"2007"},{"1":"46","2":"Adelie","3":"Dream","4":"39.6","5":"18.8","6":"190","7":"4600","8":"male","9":"2007"},{"1":"47","2":"Adelie","3":"Dream","4":"41.1","5":"19.0","6":"182","7":"3425","8":"male","9":"2007"},{"1":"48","2":"Adelie","3":"Dream","4":"37.5","5":"18.9","6":"179","7":"2975","8":"NA","9":"2007"},{"1":"49","2":"Adelie","3":"Dream","4":"36.0","5":"17.9","6":"190","7":"3450","8":"female","9":"2007"},{"1":"50","2":"Adelie","3":"Dream","4":"42.3","5":"21.2","6":"191","7":"4150","8":"male","9":"2007"},{"1":"51","2":"Adelie","3":"Biscoe","4":"39.6","5":"17.7","6":"186","7":"3500","8":"female","9":"2008"},{"1":"52","2":"Adelie","3":"Biscoe","4":"40.1","5":"18.9","6":"188","7":"4300","8":"male","9":"2008"},{"1":"53","2":"Adelie","3":"Biscoe","4":"35.0","5":"17.9","6":"190","7":"3450","8":"female","9":"2008"},{"1":"54","2":"Adelie","3":"Biscoe","4":"42.0","5":"19.5","6":"200","7":"4050","8":"male","9":"2008"},{"1":"55","2":"Adelie","3":"Biscoe","4":"34.5","5":"18.1","6":"187","7":"2900","8":"female","9":"2008"},{"1":"56","2":"Adelie","3":"Biscoe","4":"41.4","5":"18.6","6":"191","7":"3700","8":"male","9":"2008"},{"1":"57","2":"Adelie","3":"Biscoe","4":"39.0","5":"17.5","6":"186","7":"3550","8":"female","9":"2008"},{"1":"58","2":"Adelie","3":"Biscoe","4":"40.6","5":"18.8","6":"193","7":"3800","8":"male","9":"2008"},{"1":"59","2":"Adelie","3":"Biscoe","4":"36.5","5":"16.6","6":"181","7":"2850","8":"female","9":"2008"},{"1":"60","2":"Adelie","3":"Biscoe","4":"37.6","5":"19.1","6":"194","7":"3750","8":"male","9":"2008"},{"1":"61","2":"Adelie","3":"Biscoe","4":"35.7","5":"16.9","6":"185","7":"3150","8":"female","9":"2008"},{"1":"62","2":"Adelie","3":"Biscoe","4":"41.3","5":"21.1","6":"195","7":"4400","8":"male","9":"2008"},{"1":"63","2":"Adelie","3":"Biscoe","4":"37.6","5":"17.0","6":"185","7":"3600","8":"female","9":"2008"},{"1":"64","2":"Adelie","3":"Biscoe","4":"41.1","5":"18.2","6":"192","7":"4050","8":"male","9":"2008"},{"1":"65","2":"Adelie","3":"Biscoe","4":"36.4","5":"17.1","6":"184","7":"2850","8":"female","9":"2008"},{"1":"66","2":"Adelie","3":"Biscoe","4":"41.6","5":"18.0","6":"192","7":"3950","8":"male","9":"2008"},{"1":"67","2":"Adelie","3":"Biscoe","4":"35.5","5":"16.2","6":"195","7":"3350","8":"female","9":"2008"},{"1":"68","2":"Adelie","3":"Biscoe","4":"41.1","5":"19.1","6":"188","7":"4100","8":"male","9":"2008"},{"1":"69","2":"Adelie","3":"Torgersen","4":"35.9","5":"16.6","6":"190","7":"3050","8":"female","9":"2008"},{"1":"70","2":"Adelie","3":"Torgersen","4":"41.8","5":"19.4","6":"198","7":"4450","8":"male","9":"2008"},{"1":"71","2":"Adelie","3":"Torgersen","4":"33.5","5":"19.0","6":"190","7":"3600","8":"female","9":"2008"},{"1":"72","2":"Adelie","3":"Torgersen","4":"39.7","5":"18.4","6":"190","7":"3900","8":"male","9":"2008"},{"1":"73","2":"Adelie","3":"Torgersen","4":"39.6","5":"17.2","6":"196","7":"3550","8":"female","9":"2008"},{"1":"74","2":"Adelie","3":"Torgersen","4":"45.8","5":"18.9","6":"197","7":"4150","8":"male","9":"2008"},{"1":"75","2":"Adelie","3":"Torgersen","4":"35.5","5":"17.5","6":"190","7":"3700","8":"female","9":"2008"},{"1":"76","2":"Adelie","3":"Torgersen","4":"42.8","5":"18.5","6":"195","7":"4250","8":"male","9":"2008"},{"1":"77","2":"Adelie","3":"Torgersen","4":"40.9","5":"16.8","6":"191","7":"3700","8":"female","9":"2008"},{"1":"78","2":"Adelie","3":"Torgersen","4":"37.2","5":"19.4","6":"184","7":"3900","8":"male","9":"2008"},{"1":"79","2":"Adelie","3":"Torgersen","4":"36.2","5":"16.1","6":"187","7":"3550","8":"female","9":"2008"},{"1":"80","2":"Adelie","3":"Torgersen","4":"42.1","5":"19.1","6":"195","7":"4000","8":"male","9":"2008"},{"1":"81","2":"Adelie","3":"Torgersen","4":"34.6","5":"17.2","6":"189","7":"3200","8":"female","9":"2008"},{"1":"82","2":"Adelie","3":"Torgersen","4":"42.9","5":"17.6","6":"196","7":"4700","8":"male","9":"2008"},{"1":"83","2":"Adelie","3":"Torgersen","4":"36.7","5":"18.8","6":"187","7":"3800","8":"female","9":"2008"},{"1":"84","2":"Adelie","3":"Torgersen","4":"35.1","5":"19.4","6":"193","7":"4200","8":"male","9":"2008"},{"1":"85","2":"Adelie","3":"Dream","4":"37.3","5":"17.8","6":"191","7":"3350","8":"female","9":"2008"},{"1":"86","2":"Adelie","3":"Dream","4":"41.3","5":"20.3","6":"194","7":"3550","8":"male","9":"2008"},{"1":"87","2":"Adelie","3":"Dream","4":"36.3","5":"19.5","6":"190","7":"3800","8":"male","9":"2008"},{"1":"88","2":"Adelie","3":"Dream","4":"36.9","5":"18.6","6":"189","7":"3500","8":"female","9":"2008"},{"1":"89","2":"Adelie","3":"Dream","4":"38.3","5":"19.2","6":"189","7":"3950","8":"male","9":"2008"},{"1":"90","2":"Adelie","3":"Dream","4":"38.9","5":"18.8","6":"190","7":"3600","8":"female","9":"2008"},{"1":"91","2":"Adelie","3":"Dream","4":"35.7","5":"18.0","6":"202","7":"3550","8":"female","9":"2008"},{"1":"92","2":"Adelie","3":"Dream","4":"41.1","5":"18.1","6":"205","7":"4300","8":"male","9":"2008"},{"1":"93","2":"Adelie","3":"Dream","4":"34.0","5":"17.1","6":"185","7":"3400","8":"female","9":"2008"},{"1":"94","2":"Adelie","3":"Dream","4":"39.6","5":"18.1","6":"186","7":"4450","8":"male","9":"2008"},{"1":"95","2":"Adelie","3":"Dream","4":"36.2","5":"17.3","6":"187","7":"3300","8":"female","9":"2008"},{"1":"96","2":"Adelie","3":"Dream","4":"40.8","5":"18.9","6":"208","7":"4300","8":"male","9":"2008"},{"1":"97","2":"Adelie","3":"Dream","4":"38.1","5":"18.6","6":"190","7":"3700","8":"female","9":"2008"},{"1":"98","2":"Adelie","3":"Dream","4":"40.3","5":"18.5","6":"196","7":"4350","8":"male","9":"2008"},{"1":"99","2":"Adelie","3":"Dream","4":"33.1","5":"16.1","6":"178","7":"2900","8":"female","9":"2008"},{"1":"100","2":"Adelie","3":"Dream","4":"43.2","5":"18.5","6":"192","7":"4100","8":"male","9":"2008"},{"1":"101","2":"Adelie","3":"Biscoe","4":"35.0","5":"17.9","6":"192","7":"3725","8":"female","9":"2009"},{"1":"102","2":"Adelie","3":"Biscoe","4":"41.0","5":"20.0","6":"203","7":"4725","8":"male","9":"2009"},{"1":"103","2":"Adelie","3":"Biscoe","4":"37.7","5":"16.0","6":"183","7":"3075","8":"female","9":"2009"},{"1":"104","2":"Adelie","3":"Biscoe","4":"37.8","5":"20.0","6":"190","7":"4250","8":"male","9":"2009"},{"1":"105","2":"Adelie","3":"Biscoe","4":"37.9","5":"18.6","6":"193","7":"2925","8":"female","9":"2009"},{"1":"106","2":"Adelie","3":"Biscoe","4":"39.7","5":"18.9","6":"184","7":"3550","8":"male","9":"2009"},{"1":"107","2":"Adelie","3":"Biscoe","4":"38.6","5":"17.2","6":"199","7":"3750","8":"female","9":"2009"},{"1":"108","2":"Adelie","3":"Biscoe","4":"38.2","5":"20.0","6":"190","7":"3900","8":"male","9":"2009"},{"1":"109","2":"Adelie","3":"Biscoe","4":"38.1","5":"17.0","6":"181","7":"3175","8":"female","9":"2009"},{"1":"110","2":"Adelie","3":"Biscoe","4":"43.2","5":"19.0","6":"197","7":"4775","8":"male","9":"2009"},{"1":"111","2":"Adelie","3":"Biscoe","4":"38.1","5":"16.5","6":"198","7":"3825","8":"female","9":"2009"},{"1":"112","2":"Adelie","3":"Biscoe","4":"45.6","5":"20.3","6":"191","7":"4600","8":"male","9":"2009"},{"1":"113","2":"Adelie","3":"Biscoe","4":"39.7","5":"17.7","6":"193","7":"3200","8":"female","9":"2009"},{"1":"114","2":"Adelie","3":"Biscoe","4":"42.2","5":"19.5","6":"197","7":"4275","8":"male","9":"2009"},{"1":"115","2":"Adelie","3":"Biscoe","4":"39.6","5":"20.7","6":"191","7":"3900","8":"female","9":"2009"},{"1":"116","2":"Adelie","3":"Biscoe","4":"42.7","5":"18.3","6":"196","7":"4075","8":"male","9":"2009"},{"1":"117","2":"Adelie","3":"Torgersen","4":"38.6","5":"17.0","6":"188","7":"2900","8":"female","9":"2009"},{"1":"118","2":"Adelie","3":"Torgersen","4":"37.3","5":"20.5","6":"199","7":"3775","8":"male","9":"2009"},{"1":"119","2":"Adelie","3":"Torgersen","4":"35.7","5":"17.0","6":"189","7":"3350","8":"female","9":"2009"},{"1":"120","2":"Adelie","3":"Torgersen","4":"41.1","5":"18.6","6":"189","7":"3325","8":"male","9":"2009"},{"1":"121","2":"Adelie","3":"Torgersen","4":"36.2","5":"17.2","6":"187","7":"3150","8":"female","9":"2009"},{"1":"122","2":"Adelie","3":"Torgersen","4":"37.7","5":"19.8","6":"198","7":"3500","8":"male","9":"2009"},{"1":"123","2":"Adelie","3":"Torgersen","4":"40.2","5":"17.0","6":"176","7":"3450","8":"female","9":"2009"},{"1":"124","2":"Adelie","3":"Torgersen","4":"41.4","5":"18.5","6":"202","7":"3875","8":"male","9":"2009"},{"1":"125","2":"Adelie","3":"Torgersen","4":"35.2","5":"15.9","6":"186","7":"3050","8":"female","9":"2009"},{"1":"126","2":"Adelie","3":"Torgersen","4":"40.6","5":"19.0","6":"199","7":"4000","8":"male","9":"2009"},{"1":"127","2":"Adelie","3":"Torgersen","4":"38.8","5":"17.6","6":"191","7":"3275","8":"female","9":"2009"},{"1":"128","2":"Adelie","3":"Torgersen","4":"41.5","5":"18.3","6":"195","7":"4300","8":"male","9":"2009"},{"1":"129","2":"Adelie","3":"Torgersen","4":"39.0","5":"17.1","6":"191","7":"3050","8":"female","9":"2009"},{"1":"130","2":"Adelie","3":"Torgersen","4":"44.1","5":"18.0","6":"210","7":"4000","8":"male","9":"2009"},{"1":"131","2":"Adelie","3":"Torgersen","4":"38.5","5":"17.9","6":"190","7":"3325","8":"female","9":"2009"},{"1":"132","2":"Adelie","3":"Torgersen","4":"43.1","5":"19.2","6":"197","7":"3500","8":"male","9":"2009"},{"1":"133","2":"Adelie","3":"Dream","4":"36.8","5":"18.5","6":"193","7":"3500","8":"female","9":"2009"},{"1":"134","2":"Adelie","3":"Dream","4":"37.5","5":"18.5","6":"199","7":"4475","8":"male","9":"2009"},{"1":"135","2":"Adelie","3":"Dream","4":"38.1","5":"17.6","6":"187","7":"3425","8":"female","9":"2009"},{"1":"136","2":"Adelie","3":"Dream","4":"41.1","5":"17.5","6":"190","7":"3900","8":"male","9":"2009"},{"1":"137","2":"Adelie","3":"Dream","4":"35.6","5":"17.5","6":"191","7":"3175","8":"female","9":"2009"},{"1":"138","2":"Adelie","3":"Dream","4":"40.2","5":"20.1","6":"200","7":"3975","8":"male","9":"2009"},{"1":"139","2":"Adelie","3":"Dream","4":"37.0","5":"16.5","6":"185","7":"3400","8":"female","9":"2009"},{"1":"140","2":"Adelie","3":"Dream","4":"39.7","5":"17.9","6":"193","7":"4250","8":"male","9":"2009"},{"1":"141","2":"Adelie","3":"Dream","4":"40.2","5":"17.1","6":"193","7":"3400","8":"female","9":"2009"},{"1":"142","2":"Adelie","3":"Dream","4":"40.6","5":"17.2","6":"187","7":"3475","8":"male","9":"2009"},{"1":"143","2":"Adelie","3":"Dream","4":"32.1","5":"15.5","6":"188","7":"3050","8":"female","9":"2009"},{"1":"144","2":"Adelie","3":"Dream","4":"40.7","5":"17.0","6":"190","7":"3725","8":"male","9":"2009"},{"1":"145","2":"Adelie","3":"Dream","4":"37.3","5":"16.8","6":"192","7":"3000","8":"female","9":"2009"},{"1":"146","2":"Adelie","3":"Dream","4":"39.0","5":"18.7","6":"185","7":"3650","8":"male","9":"2009"},{"1":"147","2":"Adelie","3":"Dream","4":"39.2","5":"18.6","6":"190","7":"4250","8":"male","9":"2009"},{"1":"148","2":"Adelie","3":"Dream","4":"36.6","5":"18.4","6":"184","7":"3475","8":"female","9":"2009"},{"1":"149","2":"Adelie","3":"Dream","4":"36.0","5":"17.8","6":"195","7":"3450","8":"female","9":"2009"},{"1":"150","2":"Adelie","3":"Dream","4":"37.8","5":"18.1","6":"193","7":"3750","8":"male","9":"2009"},{"1":"151","2":"Adelie","3":"Dream","4":"36.0","5":"17.1","6":"187","7":"3700","8":"female","9":"2009"},{"1":"152","2":"Adelie","3":"Dream","4":"41.5","5":"18.5","6":"201","7":"4000","8":"male","9":"2009"},{"1":"153","2":"Gentoo","3":"Biscoe","4":"46.1","5":"13.2","6":"211","7":"4500","8":"female","9":"2007"},{"1":"154","2":"Gentoo","3":"Biscoe","4":"50.0","5":"16.3","6":"230","7":"5700","8":"male","9":"2007"},{"1":"155","2":"Gentoo","3":"Biscoe","4":"48.7","5":"14.1","6":"210","7":"4450","8":"female","9":"2007"},{"1":"156","2":"Gentoo","3":"Biscoe","4":"50.0","5":"15.2","6":"218","7":"5700","8":"male","9":"2007"},{"1":"157","2":"Gentoo","3":"Biscoe","4":"47.6","5":"14.5","6":"215","7":"5400","8":"male","9":"2007"},{"1":"158","2":"Gentoo","3":"Biscoe","4":"46.5","5":"13.5","6":"210","7":"4550","8":"female","9":"2007"},{"1":"159","2":"Gentoo","3":"Biscoe","4":"45.4","5":"14.6","6":"211","7":"4800","8":"female","9":"2007"},{"1":"160","2":"Gentoo","3":"Biscoe","4":"46.7","5":"15.3","6":"219","7":"5200","8":"male","9":"2007"},{"1":"161","2":"Gentoo","3":"Biscoe","4":"43.3","5":"13.4","6":"209","7":"4400","8":"female","9":"2007"},{"1":"162","2":"Gentoo","3":"Biscoe","4":"46.8","5":"15.4","6":"215","7":"5150","8":"male","9":"2007"},{"1":"163","2":"Gentoo","3":"Biscoe","4":"40.9","5":"13.7","6":"214","7":"4650","8":"female","9":"2007"},{"1":"164","2":"Gentoo","3":"Biscoe","4":"49.0","5":"16.1","6":"216","7":"5550","8":"male","9":"2007"},{"1":"165","2":"Gentoo","3":"Biscoe","4":"45.5","5":"13.7","6":"214","7":"4650","8":"female","9":"2007"},{"1":"166","2":"Gentoo","3":"Biscoe","4":"48.4","5":"14.6","6":"213","7":"5850","8":"male","9":"2007"},{"1":"167","2":"Gentoo","3":"Biscoe","4":"45.8","5":"14.6","6":"210","7":"4200","8":"female","9":"2007"},{"1":"168","2":"Gentoo","3":"Biscoe","4":"49.3","5":"15.7","6":"217","7":"5850","8":"male","9":"2007"},{"1":"169","2":"Gentoo","3":"Biscoe","4":"42.0","5":"13.5","6":"210","7":"4150","8":"female","9":"2007"},{"1":"170","2":"Gentoo","3":"Biscoe","4":"49.2","5":"15.2","6":"221","7":"6300","8":"male","9":"2007"},{"1":"171","2":"Gentoo","3":"Biscoe","4":"46.2","5":"14.5","6":"209","7":"4800","8":"female","9":"2007"},{"1":"172","2":"Gentoo","3":"Biscoe","4":"48.7","5":"15.1","6":"222","7":"5350","8":"male","9":"2007"},{"1":"173","2":"Gentoo","3":"Biscoe","4":"50.2","5":"14.3","6":"218","7":"5700","8":"male","9":"2007"},{"1":"174","2":"Gentoo","3":"Biscoe","4":"45.1","5":"14.5","6":"215","7":"5000","8":"female","9":"2007"},{"1":"175","2":"Gentoo","3":"Biscoe","4":"46.5","5":"14.5","6":"213","7":"4400","8":"female","9":"2007"},{"1":"176","2":"Gentoo","3":"Biscoe","4":"46.3","5":"15.8","6":"215","7":"5050","8":"male","9":"2007"},{"1":"177","2":"Gentoo","3":"Biscoe","4":"42.9","5":"13.1","6":"215","7":"5000","8":"female","9":"2007"},{"1":"178","2":"Gentoo","3":"Biscoe","4":"46.1","5":"15.1","6":"215","7":"5100","8":"male","9":"2007"},{"1":"179","2":"Gentoo","3":"Biscoe","4":"44.5","5":"14.3","6":"216","7":"4100","8":"NA","9":"2007"},{"1":"180","2":"Gentoo","3":"Biscoe","4":"47.8","5":"15.0","6":"215","7":"5650","8":"male","9":"2007"},{"1":"181","2":"Gentoo","3":"Biscoe","4":"48.2","5":"14.3","6":"210","7":"4600","8":"female","9":"2007"},{"1":"182","2":"Gentoo","3":"Biscoe","4":"50.0","5":"15.3","6":"220","7":"5550","8":"male","9":"2007"},{"1":"183","2":"Gentoo","3":"Biscoe","4":"47.3","5":"15.3","6":"222","7":"5250","8":"male","9":"2007"},{"1":"184","2":"Gentoo","3":"Biscoe","4":"42.8","5":"14.2","6":"209","7":"4700","8":"female","9":"2007"},{"1":"185","2":"Gentoo","3":"Biscoe","4":"45.1","5":"14.5","6":"207","7":"5050","8":"female","9":"2007"},{"1":"186","2":"Gentoo","3":"Biscoe","4":"59.6","5":"17.0","6":"230","7":"6050","8":"male","9":"2007"},{"1":"187","2":"Gentoo","3":"Biscoe","4":"49.1","5":"14.8","6":"220","7":"5150","8":"female","9":"2008"},{"1":"188","2":"Gentoo","3":"Biscoe","4":"48.4","5":"16.3","6":"220","7":"5400","8":"male","9":"2008"},{"1":"189","2":"Gentoo","3":"Biscoe","4":"42.6","5":"13.7","6":"213","7":"4950","8":"female","9":"2008"},{"1":"190","2":"Gentoo","3":"Biscoe","4":"44.4","5":"17.3","6":"219","7":"5250","8":"male","9":"2008"},{"1":"191","2":"Gentoo","3":"Biscoe","4":"44.0","5":"13.6","6":"208","7":"4350","8":"female","9":"2008"},{"1":"192","2":"Gentoo","3":"Biscoe","4":"48.7","5":"15.7","6":"208","7":"5350","8":"male","9":"2008"},{"1":"193","2":"Gentoo","3":"Biscoe","4":"42.7","5":"13.7","6":"208","7":"3950","8":"female","9":"2008"},{"1":"194","2":"Gentoo","3":"Biscoe","4":"49.6","5":"16.0","6":"225","7":"5700","8":"male","9":"2008"},{"1":"195","2":"Gentoo","3":"Biscoe","4":"45.3","5":"13.7","6":"210","7":"4300","8":"female","9":"2008"},{"1":"196","2":"Gentoo","3":"Biscoe","4":"49.6","5":"15.0","6":"216","7":"4750","8":"male","9":"2008"},{"1":"197","2":"Gentoo","3":"Biscoe","4":"50.5","5":"15.9","6":"222","7":"5550","8":"male","9":"2008"},{"1":"198","2":"Gentoo","3":"Biscoe","4":"43.6","5":"13.9","6":"217","7":"4900","8":"female","9":"2008"},{"1":"199","2":"Gentoo","3":"Biscoe","4":"45.5","5":"13.9","6":"210","7":"4200","8":"female","9":"2008"},{"1":"200","2":"Gentoo","3":"Biscoe","4":"50.5","5":"15.9","6":"225","7":"5400","8":"male","9":"2008"},{"1":"201","2":"Gentoo","3":"Biscoe","4":"44.9","5":"13.3","6":"213","7":"5100","8":"female","9":"2008"},{"1":"202","2":"Gentoo","3":"Biscoe","4":"45.2","5":"15.8","6":"215","7":"5300","8":"male","9":"2008"},{"1":"203","2":"Gentoo","3":"Biscoe","4":"46.6","5":"14.2","6":"210","7":"4850","8":"female","9":"2008"},{"1":"204","2":"Gentoo","3":"Biscoe","4":"48.5","5":"14.1","6":"220","7":"5300","8":"male","9":"2008"},{"1":"205","2":"Gentoo","3":"Biscoe","4":"45.1","5":"14.4","6":"210","7":"4400","8":"female","9":"2008"},{"1":"206","2":"Gentoo","3":"Biscoe","4":"50.1","5":"15.0","6":"225","7":"5000","8":"male","9":"2008"},{"1":"207","2":"Gentoo","3":"Biscoe","4":"46.5","5":"14.4","6":"217","7":"4900","8":"female","9":"2008"},{"1":"208","2":"Gentoo","3":"Biscoe","4":"45.0","5":"15.4","6":"220","7":"5050","8":"male","9":"2008"},{"1":"209","2":"Gentoo","3":"Biscoe","4":"43.8","5":"13.9","6":"208","7":"4300","8":"female","9":"2008"},{"1":"210","2":"Gentoo","3":"Biscoe","4":"45.5","5":"15.0","6":"220","7":"5000","8":"male","9":"2008"},{"1":"211","2":"Gentoo","3":"Biscoe","4":"43.2","5":"14.5","6":"208","7":"4450","8":"female","9":"2008"},{"1":"212","2":"Gentoo","3":"Biscoe","4":"50.4","5":"15.3","6":"224","7":"5550","8":"male","9":"2008"},{"1":"213","2":"Gentoo","3":"Biscoe","4":"45.3","5":"13.8","6":"208","7":"4200","8":"female","9":"2008"},{"1":"214","2":"Gentoo","3":"Biscoe","4":"46.2","5":"14.9","6":"221","7":"5300","8":"male","9":"2008"},{"1":"215","2":"Gentoo","3":"Biscoe","4":"45.7","5":"13.9","6":"214","7":"4400","8":"female","9":"2008"},{"1":"216","2":"Gentoo","3":"Biscoe","4":"54.3","5":"15.7","6":"231","7":"5650","8":"male","9":"2008"},{"1":"217","2":"Gentoo","3":"Biscoe","4":"45.8","5":"14.2","6":"219","7":"4700","8":"female","9":"2008"},{"1":"218","2":"Gentoo","3":"Biscoe","4":"49.8","5":"16.8","6":"230","7":"5700","8":"male","9":"2008"},{"1":"219","2":"Gentoo","3":"Biscoe","4":"46.2","5":"14.4","6":"214","7":"4650","8":"NA","9":"2008"},{"1":"220","2":"Gentoo","3":"Biscoe","4":"49.5","5":"16.2","6":"229","7":"5800","8":"male","9":"2008"},{"1":"221","2":"Gentoo","3":"Biscoe","4":"43.5","5":"14.2","6":"220","7":"4700","8":"female","9":"2008"},{"1":"222","2":"Gentoo","3":"Biscoe","4":"50.7","5":"15.0","6":"223","7":"5550","8":"male","9":"2008"},{"1":"223","2":"Gentoo","3":"Biscoe","4":"47.7","5":"15.0","6":"216","7":"4750","8":"female","9":"2008"},{"1":"224","2":"Gentoo","3":"Biscoe","4":"46.4","5":"15.6","6":"221","7":"5000","8":"male","9":"2008"},{"1":"225","2":"Gentoo","3":"Biscoe","4":"48.2","5":"15.6","6":"221","7":"5100","8":"male","9":"2008"},{"1":"226","2":"Gentoo","3":"Biscoe","4":"46.5","5":"14.8","6":"217","7":"5200","8":"female","9":"2008"},{"1":"227","2":"Gentoo","3":"Biscoe","4":"46.4","5":"15.0","6":"216","7":"4700","8":"female","9":"2008"},{"1":"228","2":"Gentoo","3":"Biscoe","4":"48.6","5":"16.0","6":"230","7":"5800","8":"male","9":"2008"},{"1":"229","2":"Gentoo","3":"Biscoe","4":"47.5","5":"14.2","6":"209","7":"4600","8":"female","9":"2008"},{"1":"230","2":"Gentoo","3":"Biscoe","4":"51.1","5":"16.3","6":"220","7":"6000","8":"male","9":"2008"},{"1":"231","2":"Gentoo","3":"Biscoe","4":"45.2","5":"13.8","6":"215","7":"4750","8":"female","9":"2008"},{"1":"232","2":"Gentoo","3":"Biscoe","4":"45.2","5":"16.4","6":"223","7":"5950","8":"male","9":"2008"},{"1":"233","2":"Gentoo","3":"Biscoe","4":"49.1","5":"14.5","6":"212","7":"4625","8":"female","9":"2009"},{"1":"234","2":"Gentoo","3":"Biscoe","4":"52.5","5":"15.6","6":"221","7":"5450","8":"male","9":"2009"},{"1":"235","2":"Gentoo","3":"Biscoe","4":"47.4","5":"14.6","6":"212","7":"4725","8":"female","9":"2009"},{"1":"236","2":"Gentoo","3":"Biscoe","4":"50.0","5":"15.9","6":"224","7":"5350","8":"male","9":"2009"},{"1":"237","2":"Gentoo","3":"Biscoe","4":"44.9","5":"13.8","6":"212","7":"4750","8":"female","9":"2009"},{"1":"238","2":"Gentoo","3":"Biscoe","4":"50.8","5":"17.3","6":"228","7":"5600","8":"male","9":"2009"},{"1":"239","2":"Gentoo","3":"Biscoe","4":"43.4","5":"14.4","6":"218","7":"4600","8":"female","9":"2009"},{"1":"240","2":"Gentoo","3":"Biscoe","4":"51.3","5":"14.2","6":"218","7":"5300","8":"male","9":"2009"},{"1":"241","2":"Gentoo","3":"Biscoe","4":"47.5","5":"14.0","6":"212","7":"4875","8":"female","9":"2009"},{"1":"242","2":"Gentoo","3":"Biscoe","4":"52.1","5":"17.0","6":"230","7":"5550","8":"male","9":"2009"},{"1":"243","2":"Gentoo","3":"Biscoe","4":"47.5","5":"15.0","6":"218","7":"4950","8":"female","9":"2009"},{"1":"244","2":"Gentoo","3":"Biscoe","4":"52.2","5":"17.1","6":"228","7":"5400","8":"male","9":"2009"},{"1":"245","2":"Gentoo","3":"Biscoe","4":"45.5","5":"14.5","6":"212","7":"4750","8":"female","9":"2009"},{"1":"246","2":"Gentoo","3":"Biscoe","4":"49.5","5":"16.1","6":"224","7":"5650","8":"male","9":"2009"},{"1":"247","2":"Gentoo","3":"Biscoe","4":"44.5","5":"14.7","6":"214","7":"4850","8":"female","9":"2009"},{"1":"248","2":"Gentoo","3":"Biscoe","4":"50.8","5":"15.7","6":"226","7":"5200","8":"male","9":"2009"},{"1":"249","2":"Gentoo","3":"Biscoe","4":"49.4","5":"15.8","6":"216","7":"4925","8":"male","9":"2009"},{"1":"250","2":"Gentoo","3":"Biscoe","4":"46.9","5":"14.6","6":"222","7":"4875","8":"female","9":"2009"},{"1":"251","2":"Gentoo","3":"Biscoe","4":"48.4","5":"14.4","6":"203","7":"4625","8":"female","9":"2009"},{"1":"252","2":"Gentoo","3":"Biscoe","4":"51.1","5":"16.5","6":"225","7":"5250","8":"male","9":"2009"},{"1":"253","2":"Gentoo","3":"Biscoe","4":"48.5","5":"15.0","6":"219","7":"4850","8":"female","9":"2009"},{"1":"254","2":"Gentoo","3":"Biscoe","4":"55.9","5":"17.0","6":"228","7":"5600","8":"male","9":"2009"},{"1":"255","2":"Gentoo","3":"Biscoe","4":"47.2","5":"15.5","6":"215","7":"4975","8":"female","9":"2009"},{"1":"256","2":"Gentoo","3":"Biscoe","4":"49.1","5":"15.0","6":"228","7":"5500","8":"male","9":"2009"},{"1":"257","2":"Gentoo","3":"Biscoe","4":"47.3","5":"13.8","6":"216","7":"4725","8":"NA","9":"2009"},{"1":"258","2":"Gentoo","3":"Biscoe","4":"46.8","5":"16.1","6":"215","7":"5500","8":"male","9":"2009"},{"1":"259","2":"Gentoo","3":"Biscoe","4":"41.7","5":"14.7","6":"210","7":"4700","8":"female","9":"2009"},{"1":"260","2":"Gentoo","3":"Biscoe","4":"53.4","5":"15.8","6":"219","7":"5500","8":"male","9":"2009"},{"1":"261","2":"Gentoo","3":"Biscoe","4":"43.3","5":"14.0","6":"208","7":"4575","8":"female","9":"2009"},{"1":"262","2":"Gentoo","3":"Biscoe","4":"48.1","5":"15.1","6":"209","7":"5500","8":"male","9":"2009"},{"1":"263","2":"Gentoo","3":"Biscoe","4":"50.5","5":"15.2","6":"216","7":"5000","8":"female","9":"2009"},{"1":"264","2":"Gentoo","3":"Biscoe","4":"49.8","5":"15.9","6":"229","7":"5950","8":"male","9":"2009"},{"1":"265","2":"Gentoo","3":"Biscoe","4":"43.5","5":"15.2","6":"213","7":"4650","8":"female","9":"2009"},{"1":"266","2":"Gentoo","3":"Biscoe","4":"51.5","5":"16.3","6":"230","7":"5500","8":"male","9":"2009"},{"1":"267","2":"Gentoo","3":"Biscoe","4":"46.2","5":"14.1","6":"217","7":"4375","8":"female","9":"2009"},{"1":"268","2":"Gentoo","3":"Biscoe","4":"55.1","5":"16.0","6":"230","7":"5850","8":"male","9":"2009"},{"1":"269","2":"Gentoo","3":"Biscoe","4":"44.5","5":"15.7","6":"217","7":"4875","8":"NA","9":"2009"},{"1":"270","2":"Gentoo","3":"Biscoe","4":"48.8","5":"16.2","6":"222","7":"6000","8":"male","9":"2009"},{"1":"271","2":"Gentoo","3":"Biscoe","4":"47.2","5":"13.7","6":"214","7":"4925","8":"female","9":"2009"},{"1":"272","2":"Gentoo","3":"Biscoe","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"2009"},{"1":"273","2":"Gentoo","3":"Biscoe","4":"46.8","5":"14.3","6":"215","7":"4850","8":"female","9":"2009"},{"1":"274","2":"Gentoo","3":"Biscoe","4":"50.4","5":"15.7","6":"222","7":"5750","8":"male","9":"2009"},{"1":"275","2":"Gentoo","3":"Biscoe","4":"45.2","5":"14.8","6":"212","7":"5200","8":"female","9":"2009"},{"1":"276","2":"Gentoo","3":"Biscoe","4":"49.9","5":"16.1","6":"213","7":"5400","8":"male","9":"2009"},{"1":"277","2":"Chinstrap","3":"Dream","4":"46.5","5":"17.9","6":"192","7":"3500","8":"female","9":"2007"},{"1":"278","2":"Chinstrap","3":"Dream","4":"50.0","5":"19.5","6":"196","7":"3900","8":"male","9":"2007"},{"1":"279","2":"Chinstrap","3":"Dream","4":"51.3","5":"19.2","6":"193","7":"3650","8":"male","9":"2007"},{"1":"280","2":"Chinstrap","3":"Dream","4":"45.4","5":"18.7","6":"188","7":"3525","8":"female","9":"2007"},{"1":"281","2":"Chinstrap","3":"Dream","4":"52.7","5":"19.8","6":"197","7":"3725","8":"male","9":"2007"},{"1":"282","2":"Chinstrap","3":"Dream","4":"45.2","5":"17.8","6":"198","7":"3950","8":"female","9":"2007"},{"1":"283","2":"Chinstrap","3":"Dream","4":"46.1","5":"18.2","6":"178","7":"3250","8":"female","9":"2007"},{"1":"284","2":"Chinstrap","3":"Dream","4":"51.3","5":"18.2","6":"197","7":"3750","8":"male","9":"2007"},{"1":"285","2":"Chinstrap","3":"Dream","4":"46.0","5":"18.9","6":"195","7":"4150","8":"female","9":"2007"},{"1":"286","2":"Chinstrap","3":"Dream","4":"51.3","5":"19.9","6":"198","7":"3700","8":"male","9":"2007"},{"1":"287","2":"Chinstrap","3":"Dream","4":"46.6","5":"17.8","6":"193","7":"3800","8":"female","9":"2007"},{"1":"288","2":"Chinstrap","3":"Dream","4":"51.7","5":"20.3","6":"194","7":"3775","8":"male","9":"2007"},{"1":"289","2":"Chinstrap","3":"Dream","4":"47.0","5":"17.3","6":"185","7":"3700","8":"female","9":"2007"},{"1":"290","2":"Chinstrap","3":"Dream","4":"52.0","5":"18.1","6":"201","7":"4050","8":"male","9":"2007"},{"1":"291","2":"Chinstrap","3":"Dream","4":"45.9","5":"17.1","6":"190","7":"3575","8":"female","9":"2007"},{"1":"292","2":"Chinstrap","3":"Dream","4":"50.5","5":"19.6","6":"201","7":"4050","8":"male","9":"2007"},{"1":"293","2":"Chinstrap","3":"Dream","4":"50.3","5":"20.0","6":"197","7":"3300","8":"male","9":"2007"},{"1":"294","2":"Chinstrap","3":"Dream","4":"58.0","5":"17.8","6":"181","7":"3700","8":"female","9":"2007"},{"1":"295","2":"Chinstrap","3":"Dream","4":"46.4","5":"18.6","6":"190","7":"3450","8":"female","9":"2007"},{"1":"296","2":"Chinstrap","3":"Dream","4":"49.2","5":"18.2","6":"195","7":"4400","8":"male","9":"2007"},{"1":"297","2":"Chinstrap","3":"Dream","4":"42.4","5":"17.3","6":"181","7":"3600","8":"female","9":"2007"},{"1":"298","2":"Chinstrap","3":"Dream","4":"48.5","5":"17.5","6":"191","7":"3400","8":"male","9":"2007"},{"1":"299","2":"Chinstrap","3":"Dream","4":"43.2","5":"16.6","6":"187","7":"2900","8":"female","9":"2007"},{"1":"300","2":"Chinstrap","3":"Dream","4":"50.6","5":"19.4","6":"193","7":"3800","8":"male","9":"2007"},{"1":"301","2":"Chinstrap","3":"Dream","4":"46.7","5":"17.9","6":"195","7":"3300","8":"female","9":"2007"},{"1":"302","2":"Chinstrap","3":"Dream","4":"52.0","5":"19.0","6":"197","7":"4150","8":"male","9":"2007"},{"1":"303","2":"Chinstrap","3":"Dream","4":"50.5","5":"18.4","6":"200","7":"3400","8":"female","9":"2008"},{"1":"304","2":"Chinstrap","3":"Dream","4":"49.5","5":"19.0","6":"200","7":"3800","8":"male","9":"2008"},{"1":"305","2":"Chinstrap","3":"Dream","4":"46.4","5":"17.8","6":"191","7":"3700","8":"female","9":"2008"},{"1":"306","2":"Chinstrap","3":"Dream","4":"52.8","5":"20.0","6":"205","7":"4550","8":"male","9":"2008"},{"1":"307","2":"Chinstrap","3":"Dream","4":"40.9","5":"16.6","6":"187","7":"3200","8":"female","9":"2008"},{"1":"308","2":"Chinstrap","3":"Dream","4":"54.2","5":"20.8","6":"201","7":"4300","8":"male","9":"2008"},{"1":"309","2":"Chinstrap","3":"Dream","4":"42.5","5":"16.7","6":"187","7":"3350","8":"female","9":"2008"},{"1":"310","2":"Chinstrap","3":"Dream","4":"51.0","5":"18.8","6":"203","7":"4100","8":"male","9":"2008"},{"1":"311","2":"Chinstrap","3":"Dream","4":"49.7","5":"18.6","6":"195","7":"3600","8":"male","9":"2008"},{"1":"312","2":"Chinstrap","3":"Dream","4":"47.5","5":"16.8","6":"199","7":"3900","8":"female","9":"2008"},{"1":"313","2":"Chinstrap","3":"Dream","4":"47.6","5":"18.3","6":"195","7":"3850","8":"female","9":"2008"},{"1":"314","2":"Chinstrap","3":"Dream","4":"52.0","5":"20.7","6":"210","7":"4800","8":"male","9":"2008"},{"1":"315","2":"Chinstrap","3":"Dream","4":"46.9","5":"16.6","6":"192","7":"2700","8":"female","9":"2008"},{"1":"316","2":"Chinstrap","3":"Dream","4":"53.5","5":"19.9","6":"205","7":"4500","8":"male","9":"2008"},{"1":"317","2":"Chinstrap","3":"Dream","4":"49.0","5":"19.5","6":"210","7":"3950","8":"male","9":"2008"},{"1":"318","2":"Chinstrap","3":"Dream","4":"46.2","5":"17.5","6":"187","7":"3650","8":"female","9":"2008"},{"1":"319","2":"Chinstrap","3":"Dream","4":"50.9","5":"19.1","6":"196","7":"3550","8":"male","9":"2008"},{"1":"320","2":"Chinstrap","3":"Dream","4":"45.5","5":"17.0","6":"196","7":"3500","8":"female","9":"2008"},{"1":"321","2":"Chinstrap","3":"Dream","4":"50.9","5":"17.9","6":"196","7":"3675","8":"female","9":"2009"},{"1":"322","2":"Chinstrap","3":"Dream","4":"50.8","5":"18.5","6":"201","7":"4450","8":"male","9":"2009"},{"1":"323","2":"Chinstrap","3":"Dream","4":"50.1","5":"17.9","6":"190","7":"3400","8":"female","9":"2009"},{"1":"324","2":"Chinstrap","3":"Dream","4":"49.0","5":"19.6","6":"212","7":"4300","8":"male","9":"2009"},{"1":"325","2":"Chinstrap","3":"Dream","4":"51.5","5":"18.7","6":"187","7":"3250","8":"male","9":"2009"},{"1":"326","2":"Chinstrap","3":"Dream","4":"49.8","5":"17.3","6":"198","7":"3675","8":"female","9":"2009"},{"1":"327","2":"Chinstrap","3":"Dream","4":"48.1","5":"16.4","6":"199","7":"3325","8":"female","9":"2009"},{"1":"328","2":"Chinstrap","3":"Dream","4":"51.4","5":"19.0","6":"201","7":"3950","8":"male","9":"2009"},{"1":"329","2":"Chinstrap","3":"Dream","4":"45.7","5":"17.3","6":"193","7":"3600","8":"female","9":"2009"},{"1":"330","2":"Chinstrap","3":"Dream","4":"50.7","5":"19.7","6":"203","7":"4050","8":"male","9":"2009"},{"1":"331","2":"Chinstrap","3":"Dream","4":"42.5","5":"17.3","6":"187","7":"3350","8":"female","9":"2009"},{"1":"332","2":"Chinstrap","3":"Dream","4":"52.2","5":"18.8","6":"197","7":"3450","8":"male","9":"2009"},{"1":"333","2":"Chinstrap","3":"Dream","4":"45.2","5":"16.6","6":"191","7":"3250","8":"female","9":"2009"},{"1":"334","2":"Chinstrap","3":"Dream","4":"49.3","5":"19.9","6":"203","7":"4050","8":"male","9":"2009"},{"1":"335","2":"Chinstrap","3":"Dream","4":"50.2","5":"18.8","6":"202","7":"3800","8":"male","9":"2009"},{"1":"336","2":"Chinstrap","3":"Dream","4":"45.6","5":"19.4","6":"194","7":"3525","8":"female","9":"2009"},{"1":"337","2":"Chinstrap","3":"Dream","4":"51.9","5":"19.5","6":"206","7":"3950","8":"male","9":"2009"},{"1":"338","2":"Chinstrap","3":"Dream","4":"46.8","5":"16.5","6":"189","7":"3650","8":"female","9":"2009"},{"1":"339","2":"Chinstrap","3":"Dream","4":"45.7","5":"17.0","6":"195","7":"3650","8":"female","9":"2009"},{"1":"340","2":"Chinstrap","3":"Dream","4":"55.8","5":"19.8","6":"207","7":"4000","8":"male","9":"2009"},{"1":"341","2":"Chinstrap","3":"Dream","4":"43.5","5":"18.1","6":"202","7":"3400","8":"female","9":"2009"},{"1":"342","2":"Chinstrap","3":"Dream","4":"49.6","5":"18.2","6":"193","7":"3775","8":"male","9":"2009"},{"1":"343","2":"Chinstrap","3":"Dream","4":"50.8","5":"19.0","6":"210","7":"4100","8":"male","9":"2009"},{"1":"344","2":"Chinstrap","3":"Dream","4":"50.2","5":"18.7","6":"198","7":"3775","8":"female","9":"2009"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
 </div>
 </div>
 </div>
-</section><section id="observable-js-example-palmer-penguins" class="level1"><h1>Observable JS example: Palmer Penguins</h1>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Description</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Structure</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Overview</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb5" data-startfrom="50" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 49;"><span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"./data/palmer-penguins.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-display">
-<div id="ojs-cell-1" data-nodetype="declaration">
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'./docs/data/palmer-penguins.csv'</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>             rowid species  island  ...  body_mass_g   sex         year
+count   344.000000     344     344  ...   342.000000   333   344.000000
+unique         NaN       3       3  ...          NaN     2          NaN
+top            NaN  Adelie  Biscoe  ...          NaN  male          NaN
+freq           NaN     152     168  ...          NaN   168          NaN
+mean    172.500000     NaN     NaN  ...  4201.754386   NaN  2008.029070
+std      99.448479     NaN     NaN  ...   801.954536   NaN     0.818356
+min       1.000000     NaN     NaN  ...  2700.000000   NaN  2007.000000
+25%      86.750000     NaN     NaN  ...  3550.000000   NaN  2007.000000
+50%     172.500000     NaN     NaN  ...  4050.000000   NaN  2008.000000
+75%     258.250000     NaN     NaN  ...  4750.000000   NaN  2009.000000
+max     344.000000     NaN     NaN  ...  6300.000000   NaN  2009.000000
 
+[11 rows x 9 columns]</code></pre>
 </div>
 </div>
 </div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb6" data-startfrom="55" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 54;"><span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>viewof bill_length_min <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">32</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span> </span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">35</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Bill length (min):"</span>}</span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>viewof islands <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(</span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"Torgersen"</span><span class="op">,</span> <span class="st">"Biscoe"</span><span class="op">,</span> <span class="st">"Dream"</span>]<span class="op">,</span> </span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">value</span><span class="op">:</span> [<span class="st">"Torgersen"</span><span class="op">,</span> <span class="st">"Biscoe"</span>]<span class="op">,</span> </span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Islands:"</span></span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-1" data-nodetype="declaration">
-
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 344 entries, 0 to 343
+Data columns (total 9 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   rowid              344 non-null    int64  
+ 1   species            344 non-null    object 
+ 2   island             344 non-null    object 
+ 3   bill_length_mm     342 non-null    float64
+ 4   bill_depth_mm      342 non-null    float64
+ 5   flipper_length_mm  342 non-null    float64
+ 6   body_mass_g        342 non-null    float64
+ 7   sex                333 non-null    object 
+ 8   year               344 non-null    int64  
+dtypes: float64(4), int64(2), object(3)
+memory usage: 24.3+ KB</code></pre>
 </div>
 </div>
 </div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb7" data-startfrom="67" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 66;"><span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> bill_length_min <span class="op">&lt;</span> penguin<span class="op">.</span><span class="at">bill_length_mm</span> <span class="op">&amp;&amp;</span></span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>         islands<span class="op">.</span><span class="fu">includes</span>(penguin<span class="op">.</span><span class="at">island</span>)<span class="op">;</span></span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-display">
-<div id="ojs-cell-3" data-nodetype="declaration">
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>     rowid    species     island  ...  body_mass_g     sex  year
+0        1     Adelie  Torgersen  ...       3750.0    male  2007
+1        2     Adelie  Torgersen  ...       3800.0  female  2007
+2        3     Adelie  Torgersen  ...       3250.0  female  2007
+3        4     Adelie  Torgersen  ...          NaN     NaN  2007
+4        5     Adelie  Torgersen  ...       3450.0  female  2007
+..     ...        ...        ...  ...          ...     ...   ...
+339    340  Chinstrap      Dream  ...       4000.0    male  2009
+340    341  Chinstrap      Dream  ...       3400.0  female  2009
+341    342  Chinstrap      Dream  ...       3775.0    male  2009
+342    343  Chinstrap      Dream  ...       4100.0    male  2009
+343    344  Chinstrap      Dream  ...       3775.0  female  2009
 
+[344 rows x 9 columns]</code></pre>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="visualization" class="level1"><h1>Visualization</h1>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">R</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Python</a></li>
+</ul>
+<div class="tab-content" data-group="language">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<p>See <a href="#fig-r">Figure&nbsp;1</a> for an exploration of bill sizes by species.</p>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb8" data-startfrom="74" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 73;"><span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">rectY</span>(filtered<span class="op">,</span> </span>
-<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a>  Plot<span class="op">.</span><span class="fu">binX</span>(</span>
-<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a>    {<span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span>}<span class="op">,</span> </span>
-<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a>    {<span class="dt">x</span><span class="op">:</span> <span class="st">"body_mass_g"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"species"</span><span class="op">,</span> <span class="dt">thresholds</span><span class="op">:</span> <span class="dv">20</span>}</span>
-<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a>    <span class="dt">facet</span><span class="op">:</span> {</span>
-<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a>      <span class="dt">data</span><span class="op">:</span> filtered<span class="op">,</span></span>
-<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"sex"</span><span class="op">,</span></span>
-<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"species"</span><span class="op">,</span></span>
-<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a>      <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">80</span></span>
-<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
-<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a>    <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">frame</span>()<span class="op">,</span></span>
-<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a>    ]</span>
-<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-display">
-<div id="ojs-cell-4" data-nodetype="expression">
-
+<details><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dt</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">bill_length_mm</span>, y <span class="op">=</span> <span class="va">bill_depth_mm</span>, color <span class="op">=</span> <span class="va">species</span>, fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, alpha <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, formula <span class="op">=</span> <span class="va">y</span> <span class="op">~</span> <span class="va">x</span>, se <span class="op">=</span> <span class="cn">T</span>, show.legend <span class="op">=</span> <span class="cn">F</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_discrete_manual</a></span><span class="op">(</span>aesthetics <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"colour"</span>, <span class="st">"fill"</span><span class="op">)</span>, values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Bill length (mm)"</span>,</span>
+<span>       y <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,</span>
+<span>       color <span class="op">=</span> <span class="st">"Penguin species"</span>,</span>
+<span>       fill <span class="op">=</span> <span class="st">"Penguin species"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div id="fig-r" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><figcaption class="figure-caption">Figure&nbsp;1: Bill length and depth for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER</figcaption><p><img src="index_files/figure-html/fig-r-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
 </div>
 </div>
 </div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>See <a href="#fig-python">Figure&nbsp;2</a> for an exploration of bill sizes by species.</p>
+<div class="cell">
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sns.set_style(<span class="st">'whitegrid'</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  sns.lmplot(x <span class="op">=</span> <span class="st">"bill_length_mm"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>               y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>               hue <span class="op">=</span> <span class="st">"species"</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>               height <span class="op">=</span> <span class="dv">7</span>,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>               data <span class="op">=</span> df,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>               palette <span class="op">=</span> [<span class="st">'#FF8C00'</span>,<span class="st">'#159090'</span>,<span class="st">'#A034F0'</span>])</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  .set_xlabels(<span class="st">'Bill length (mm)'</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  .set_ylabels(<span class="st">'Bill depth (mm)'</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div id="fig-python" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><figcaption class="figure-caption">Figure&nbsp;2: Bill length and depth for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER</figcaption><p><img src="index_files/figure-html/fig-python-1.png" class="img-fluid figure-img" width="777"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Session information">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Session information
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">R</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Python</a></li>
+</ul>
+<div class="tab-content" data-group="language">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<div class="cell">
+<details><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>R version 4.3.3 (2024-02-29)
+Platform: x86_64-apple-darwin20 (64-bit)
+Running under: macOS Monterey 12.6.1
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Europe/Paris
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] ggplot2_3.5.1 dplyr_1.1.4  
+
+loaded via a namespace (and not attached):
+ [1] Matrix_1.6-5      gtable_0.3.5      jsonlite_1.8.8    compiler_4.3.3   
+ [5] tidyselect_1.2.1  Rcpp_1.0.12       splines_4.3.3     scales_1.3.0     
+ [9] png_0.1-8         yaml_2.3.8        fastmap_1.2.0     reticulate_1.37.0
+[13] lattice_0.22-6    here_1.0.1        R6_2.5.1          labeling_0.4.3   
+[17] generics_0.1.3    knitr_1.45        htmlwidgets_1.6.4 tibble_3.2.1     
+[21] munsell_0.5.1     rprojroot_2.0.4   pillar_1.9.0      rlang_1.1.3      
+[25] utf8_1.2.4        xfun_0.44         cli_3.6.2         withr_3.0.0      
+[29] magrittr_2.0.3    mgcv_1.9-1        digest_0.6.35     grid_4.3.3       
+[33] rstudioapi_0.16.0 nlme_3.1-164      lifecycle_1.0.4   vctrs_0.6.5      
+[37] evaluate_0.23     glue_1.7.0        farver_2.1.2      fansi_1.0.6      
+[41] colorspace_2.1-0  rmarkdown_2.27    tools_4.3.3       pkgconfig_2.0.3  
+[45] htmltools_0.5.8.1</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<div class="cell">
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>session_info.show() <span class="co"># html=False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>-----
+matplotlib          3.7.1
+pandas              1.5.3
+seaborn             0.13.0
+session_info        1.0.0
+-----
+Python 3.8.16 | packaged by conda-forge | (default, Feb  1 2023, 16:13:45) [Clang 14.0.6 ]
+macOS-12.6.1-x86_64-i386-64bit
+-----
+Session information updated at 2024-08-20 15:39</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
-</section></main><!-- /main --><script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"data = FileAttachment(\"./data/palmer-penguins.csv\").csv({ typed: true })\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"viewof bill_length_min = Inputs.range(\n  [32, 50], \n  {value: 35, step: 1, label: \"Bill length (min):\"}\n)\nviewof islands = Inputs.checkbox(\n  [\"Torgersen\", \"Biscoe\", \"Dream\"], \n  { value: [\"Torgersen\", \"Biscoe\"], \n    label: \"Islands:\"\n  }\n)\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"filtered = data.filter(function(penguin) {\n  return bill_length_min < penguin.bill_length_mm &&\n         islands.includes(penguin.island);\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"Plot.rectY(filtered, \n  Plot.binX(\n    {y: \"count\"}, \n    {x: \"body_mass_g\", fill: \"species\", thresholds: 20}\n  ))\n  .plot({\n    facet: {\n      data: filtered,\n      x: \"sex\",\n      y: \"species\",\n      marginRight: 80\n    },\n    marks: [\n      Plot.frame(),\n    ]\n  }\n)\n"},{"methodName":"interpretQuiet","source":"shinyInput('bill_length_min')"},{"methodName":"interpretQuiet","source":"shinyInput('islands')"}]}
-</script><script type="module">
-if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../..";
-window._ojs.paths.runtimeToRoot = "../..";
-window._ojs.paths.docToRoot = "";
-window._ojs.selfContained = false;
-window._ojs.runtime.interpretFromScriptTags();
-</script><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
