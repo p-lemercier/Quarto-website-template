@@ -19,6 +19,8 @@ website:
       - text: "Other languages"
         menu:
           - observable_js.qmd
+          - sas.qmd
+          - stata.qmd
       - editing.qmd
       - about.qmd
 

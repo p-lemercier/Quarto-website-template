@@ -1,0 +1,59 @@
+---
+title: "Stata"
+---
+
+**Web resources :**
+
+-   Using [Statamarkdown](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Statamarkdown/stata-and-r-markdown.html)
+
+# Setup
+
+```{r}
+#| message: false
+#| warning: false
+
+library(Statamarkdown)
+
+knitr::opts_chunk$set(engine.path = list(stata = "C:/Program Files/Stata16/StataIC-64.exe"))
+```
+
+# Describe data
+
+```{stata, collectcode=TRUE}
+sysuse auto
+
+describe
+```
+
+# Summarise data
+
+```{stata}
+sysuse auto
+summarize
+```
+
+# Frequency Tables
+
+```{stata}
+sysuse auto
+tab1 foreign rep78
+```
+
+# Graphics
+
+```{stata, echo=1, results="hide"}
+graph box mpg, over(foreign)
+graph export "index_files/figure-html/fig-stata1.png", replace
+```
+
+![](docs/index_files/figure-html/fig-stata1.png)
+
+```{stata, graph = 1, echo=1, results="hide"}
+sysuse auto
+
+graph twoway (scatter mpg weight)
+graph export "index_files/figure-html/fig-stata2.png", replace
+```
+
+![](docs/index_files/figure-html/fig-stata2.png)
+

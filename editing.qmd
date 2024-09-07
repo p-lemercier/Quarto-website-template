@@ -15,7 +15,7 @@ You can add a link to another pages in your site with a relative path: see [abou
 
 See @fig-r-logo the R logo.
 
-![R is a programming language for statistical computing](./images/619px-R_logo.svg.png){#fig-r-logo fig-alt="R logo" fig-align="center" width="200"}
+![R is a programming language for statistical computing](./index_files/619px-R_logo.png){#fig-r-logo fig-alt="R logo" fig-align="center" width="200"}
 
 ## Equations
 

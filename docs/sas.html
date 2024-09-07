@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Quarto Template - About</title>
+<title>Quarto Template - SAS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -57,10 +91,12 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
+
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -111,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Editing</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -142,14 +178,24 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#describe-data" id="toc-describe-data" class="nav-link" data-scroll-target="#describe-data">Describe data</a></li>
+  <li><a href="#summarise-data" id="toc-summarise-data" class="nav-link" data-scroll-target="#summarise-data">Summarise data</a></li>
+  <li><a href="#frequency-tables" id="toc-frequency-tables" class="nav-link" data-scroll-target="#frequency-tables">Frequency Tables</a></li>
+  <li><a href="#graphics" id="toc-graphics" class="nav-link" data-scroll-target="#graphics">Graphics</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<div class="quarto-title-block"><div><h1 class="title">SAS</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
 </div>
 
 
@@ -164,10 +210,646 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This is a Quarto website.</p>
-<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
+<p>This is a simple example of how you can use SAS inside a quarto website.</p>
+<p><strong>Web resources :</strong></p>
+<ul>
+<li>See <a href="https://users.ssc.wisc.edu/~hemken/SASworkshops/Markdown/index.html">SASmarkdown Documentation</a></li>
+</ul>
+<section id="setup" class="level1">
+<h1>Setup</h1>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SASmarkdown)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sasexe <span class="ot">&lt;-</span> <span class="st">"C:/Program Files/SASHome/x86/SASFoundation/9.4/sas.exe"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>sasopts <span class="ot">&lt;-</span> <span class="st">"-nosplash -ls 75"</span> <span class="co"># "-nosplash" fails in Unix terminals</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">engine.path=</span><span class="fu">list</span>(<span class="at">sas=</span>sasexe, <span class="at">sashtml=</span>sasexe, <span class="at">saslog=</span>sasexe),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">engine.opts=</span><span class="fu">list</span>(<span class="at">sas=</span>sasopts, <span class="at">saslog=</span>sasopts),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">comment=</span><span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="describe-data" class="level1">
+<h1>Describe data</h1>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<pre class="sas cell-code"><code>proc contents data=sashelp.class (read=green) 
+     /* directory details */
+     order = varnum;
+run;</code></pre>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                           La procédure CONTENTS
+
+Nom de la table             SASHELP.CLASS      Observations             19 
+Type de membre              DATA               Variables                5  
+Moteur                      V9                 Index                    0  
+Créée                       08/11/2018         Longueur d'observation   40 
+                            05:30:07                                       
+Dernière modification       08/11/2018         Observations supprimées  0  
+                            05:30:07                                       
+Protection                                     Compressée               NON
+Type de table                                  Triée                    NON
+Libellé                     Student Data                                   
+Représentation des données  WINDOWS_32                                     
+Codage                      us-ascii  ASCII                                
+                            (ANSI)                                         
+
+             Informations dépendantes de la machine/de l'hôte
+
+Taille de la page                    65536                                 
+Nombre de pages                      1                                     
+Première page de données             1                                     
+Nb max. d'obs. par page              1632                                  
+Obs. sur première page de données    19                                    
+Nombre de corrections dans la table  0                                     
+ExtendObsCounter                     YES                                   
+Nom du fichier                       C:\Program                            
+                                     Files\SASHome\x86\SASFoundation\      
+                                     9.4\core\sashelp\class.sas7bdat       
+Version de création                  9.0401M6                              
+Hôte de création                     W32_SR12R2                            
+Nom du propriétaire                  BUILTIN\Administrateurs               
+Taille du fichier                    128KB                                 
+Taille de fichier (octets)           131072                                
+
+                      Variables par ordre de création
+ 
+                      #    Variable    Type     Long.
+
+                      1    Name        Texte        8
+                      2    Sex         Texte        1
+                      3    Age         Num.         8
+                      4    Height      Num.         8
+                      5    Weight      Num.         8</code></pre>
+</div>
+</div>
+</section>
+<section id="summarise-data" class="level1">
+<h1>Summarise data</h1>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<pre class="sas cell-code"><code>proc means data=sashelp.class;
+run;</code></pre>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            La procédure MEANS
+
+ Variable    N        Moyenne        Ec-type        Minimum        Maximum
+ -------------------------------------------------------------------------
+ Age        19     13.3157895      1.4926722     11.0000000     16.0000000
+ Height     19     62.3368421      5.1270752     51.3000000     72.0000000
+ Weight     19    100.0263158     22.7739335     50.5000000    150.0000000
+ -------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+<p>or with the SAS’s HTML engine</p>
+<details>
+<summary>Code</summary>
+<pre class="sashtml cell-code"><code>proc means data=sashelp.class;
+run;</code></pre>
+</details>
+<div class="branch">
+<a name="IDX"></a>
+<div>
+<div align="center">
+
+<!--BEGINTABLE-->
+<table class="table" cellspacing="0" cellpadding="7" rules="groups" frame="hsides" summary="Procedure Means: Statistiques descriptives">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">
+Variable
+</th>
+<th class="r b header" scope="col">
+N
+</th>
+<th class="r b header" scope="col">
+Moyenne
+</th>
+<th class="r b header" scope="col">
+Ec-type
+</th>
+<th class="r b header" scope="col">
+Minimum
+</th>
+<th class="r b header" scope="col">
+Maximum
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l stacked_cell data">
+
+<table width="100%" border="0" cellpadding="7" cellspacing="0">
+<tbody><tr>
+<th class="l data top_stacked_value">
+Age
+</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">
+Height
+</th>
+</tr>
+<tr>
+<th class="l data bottom_stacked_value">
+Weight
+</th>
+</tr>
+
+</tbody></table>
+</th>
+<td class="r stacked_cell data">
+
+<table width="100%" border="0" cellpadding="7" cellspacing="0">
+<tbody><tr>
+<td class="r data top_stacked_value">
+19
+</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">
+19
+</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">
+19
+</td>
+</tr>
+
+</tbody></table>
+</td>
+<td class="r stacked_cell data">
+
+<table width="100%" border="0" cellpadding="7" cellspacing="0">
+<tbody><tr>
+<td class="r data top_stacked_value">
+13.3157895
+</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">
+62.3368421
+</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">
+100.0263158
+</td>
+</tr>
+
+</tbody></table>
+</td>
+<td class="r stacked_cell data">
+
+<table width="100%" border="0" cellpadding="7" cellspacing="0">
+<tbody><tr>
+<td class="r data top_stacked_value">
+1.4926722
+</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">
+5.1270752
+</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">
+22.7739335
+</td>
+</tr>
+
+</tbody></table>
+</td>
+<td class="r stacked_cell data">
+
+<table width="100%" border="0" cellpadding="7" cellspacing="0">
+<tbody><tr>
+<td class="r data top_stacked_value">
+11.0000000
+</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">
+51.3000000
+</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">
+50.5000000
+</td>
+</tr>
+
+</tbody></table>
+</td>
+<td class="r stacked_cell data">
+
+<table width="100%" border="0" cellpadding="7" cellspacing="0">
+<tbody><tr>
+<td class="r data top_stacked_value">
+16.0000000
+</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">
+72.0000000
+</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">
+150.0000000
+</td>
+</tr>
+
+</tbody></table>
+</td>
+</tr>
+</tbody>
+
+</table>
+<!--ENDTABLE-->
+</div>
+</div>
+<br>
+</div>
+</section>
+<section id="frequency-tables" class="level1">
+<h1>Frequency Tables</h1>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<pre class="sas cell-code"><code>proc freq data=sashelp.class;
+  table Sex;
+run;</code></pre>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                             La procédure FREQ
+
+                                           Fréquence    Pourcentage
+       Sex    Fréquence     Pourcentage     cumulée        cumulé
+       ------------------------------------------------------------
+       F             9         47.37              9        47.37   
+       M            10         52.63             19       100.00   </code></pre>
+</div>
+</div>
+</section>
+<section id="graphics" class="level1">
+<h1>Graphics</h1>
+<p>See below for an example of regression with graphical output.</p>
+<details>
+<summary>Code</summary>
+<pre class="sashtml cell-code"><code>proc reg data=sashelp.class;
+   model Weight = Height;
+quit;</code></pre>
+</details>
+<div class="branch">
+<a name="IDX"></a>
+<div class="c proctitle">
+Modèle : MODEL1
+</div>
+<div class="c proctitle">
+Variable dépendante : Weight
+</div>
+<p>
+</p><div>
+<div align="center">
+
+<!--BEGINTABLE-->
+<table class="table" cellspacing="0" cellpadding="7" rules="groups" frame="hsides" summary="Procedure Reg: Nombre d'observations">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">
+Nb d'observations lues
+</th>
+<td class="r data">
+19
+</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">
+Nb d'obs. utilisées
+</th>
+<td class="r data">
+19
+</td>
+</tr>
+</tbody>
+
+</table>
+<!--ENDTABLE-->
+</div>
+</div>
+<br> <a name="IDX1"></a>
+<div>
+<div align="center">
+
+<!--BEGINTABLE-->
+<table class="table" cellspacing="0" cellpadding="7" rules="groups" frame="hsides" summary="Procedure Reg: Analyse de variance">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">
+Analyse de variance
+</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">
+Source
+</th>
+<th class="r b header" scope="col">
+DDL
+</th>
+<th class="r b header" scope="col">
+Somme des<br>carrés
+</th>
+<th class="r b header" scope="col">
+Moyenne<br>quadratique
+</th>
+<th class="r b header" scope="col">
+Valeur F
+</th>
+<th class="r b header" scope="col">
+Pr &gt; F
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">
+Modèle
+</th>
+<td class="r data">
+1
+</td>
+<td class="r data">
+7193.24912
+</td>
+<td class="r data">
+7193.24912
+</td>
+<td class="r data">
+57.08
+</td>
+<td class="r data">
+&lt;.0001
+</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">
+Erreur
+</th>
+<td class="r data">
+17
+</td>
+<td class="r data">
+2142.48772
+</td>
+<td class="r data">
+126.02869
+</td>
+<td class="r data">
+</td>
+<td class="r data">
+</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">
+Total sommes corrigées
+</th>
+<td class="r data">
+18
+</td>
+<td class="r data">
+9335.73684
+</td>
+<td class="r data">
+</td>
+<td class="r data">
+</td>
+<td class="r data">
+</td>
+</tr>
+</tbody>
+
+</table>
+<!--ENDTABLE-->
+</div>
+</div>
+<br> <a name="IDX2"></a>
+<div>
+<div align="center">
+
+<!--BEGINTABLE-->
+<table class="table" cellspacing="0" cellpadding="7" rules="groups" frame="hsides" summary="Procedure Reg: Statistiques d'ajustement">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">
+Root MSE
+</th>
+<td class="r data">
+11.22625
+</td>
+<th class="l rowheader" scope="row">
+R carré
+</th>
+<td class="r data">
+0.7705
+</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">
+Moyenne dépendante
+</th>
+<td class="r data">
+100.02632
+</td>
+<th class="l rowheader" scope="row">
+R car. ajust.
+</th>
+<td class="r data">
+0.7570
+</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">
+Coeff Var
+</th>
+<td class="r data">
+11.22330
+</td>
+<th class="l rowheader" scope="row">
+</th>
+<td class="r data">
+</td>
+</tr>
+</tbody>
+
+</table>
+<!--ENDTABLE-->
+</div>
+</div>
+<br> <a name="IDX3"></a>
+<div>
+<div align="center">
+
+<!--BEGINTABLE-->
+<table class="table" cellspacing="0" cellpadding="7" rules="groups" frame="hsides" summary="Procedure Reg: Paramètres estimés">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">
+Paramètres estimés
+</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">
+Variable
+</th>
+<th class="r b header" scope="col">
+DDL
+</th>
+<th class="r b header" scope="col">
+Valeur estimée<br>des paramètres
+</th>
+<th class="r b header" scope="col">
+Erreur<br>type
+</th>
+<th class="r b header" scope="col">
+Valeur du test t
+</th>
+<th class="r b header" scope="col">
+Pr &gt; |t|
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">
+Intercept
+</th>
+<th class="r data">
+1
+</th>
+<td class="r data" nowrap="">
+-143.02692
+</td>
+<td class="r data">
+32.27459
+</td>
+<td class="r data" nowrap="">
+-4.43
+</td>
+<td class="r data">
+0.0004
+</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">
+Height
+</th>
+<th class="r data">
+1
+</th>
+<td class="r data">
+3.89903
+</td>
+<td class="r data">
+0.51609
+</td>
+<td class="r data">
+7.55
+</td>
+<td class="r data">
+&lt;.0001
+</td>
+</tr>
+</tbody>
+
+</table>
+<!--ENDTABLE-->
+</div>
+</div>
+<br>
+<p style="page-break-after: always;">
+<br>
+</p>
+<hr size="3">
+<a name="IDX4"></a>
+<div class="c proctitle">
+Modèle : MODEL1
+</div>
+<div class="c proctitle">
+Variable dépendante : Weight
+</div>
+<p>
+</p><div>
+<div class="c">
+<p><img alt="Panel de diagnostics d'ajustement pour Weight." src="index_files/figure-html/fig-sas.png" style=" height: 640px; width: 640px;" border="0" class="c"></p>
+</div>
+</div>
+<br> <a name="IDX5"></a>
+<div>
+<div class="c">
+<p><img alt="Nuage de points des résidus par Height pour Weight." src="index_files/figure-html/fig-sas1.png" style=" height: 480px; width: 640px;" border="0" class="c"></p>
+</div>
+</div>
+<br> <a name="IDX6"></a>
+<div>
+<div class="c">
+<p><img alt="Nuage de points de Weight par Height superposé par la courbe d'ajustement, un intervalle de confiance à 95% et des bornes de prédiction inférieure et supérieure à 95%." src="index_files/figure-html/fig-sas2.png" style=" height: 480px; width: 640px;" border="0" class="c"></p>
+</div>
+</div>
+<br>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -1,0 +1,70 @@
+---
+title: "SAS"
+---
+
+This is a simple example of how you can use SAS inside a quarto website.
+
+**Web resources :**
+
+-   See [SASmarkdown Documentation](https://users.ssc.wisc.edu/~hemken/SASworkshops/Markdown/index.html)
+
+# Setup
+
+```{r}
+#| code-fold: show
+#| message: false
+#| warning: false
+
+library(SASmarkdown)
+
+sasexe <- "C:/Program Files/SASHome/x86/SASFoundation/9.4/sas.exe"
+sasopts <- "-nosplash -ls 75" # "-nosplash" fails in Unix terminals
+
+
+knitr::opts_chunk$set(engine.path=list(sas=sasexe, sashtml=sasexe, saslog=sasexe),
+                      engine.opts=list(sas=sasopts, saslog=sasopts),
+                      comment=NA)
+```
+
+# Describe data
+
+```{sas}
+proc contents data=sashelp.class (read=green) 
+     /* directory details */
+     order = varnum;
+run;
+```
+
+# Summarise data
+
+```{sas}
+proc means data=sashelp.class;
+run;
+```
+
+or with the SAS's HTML engine
+
+```{sashtml}
+proc means data=sashelp.class;
+run;
+```
+
+# Frequency Tables
+
+```{sas}
+proc freq data=sashelp.class;
+  table Sex;
+run;
+```
+
+# Graphics
+
+See below for an example of regression with graphical output.
+
+```{sashtml}
+#| label: fig-sas
+
+proc reg data=sashelp.class;
+   model Weight = Height;
+quit;
+```
